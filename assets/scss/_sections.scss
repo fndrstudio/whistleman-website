@@ -8,7 +8,7 @@ section,
   padding: 60px 0;
   scroll-margin-top: 90px;
   overflow: clip;
-  margin-left: 1%;
+  margin-left: var(--section-margin-left);
 }
 
 @media (max-width: 1199px) {
@@ -16,7 +16,7 @@ section,
   section,
   .section {
     scroll-margin-top: 66px;
-    margin-left: 1%;
+    margin-left: var(--section-margin-left);
   }
 }
 
