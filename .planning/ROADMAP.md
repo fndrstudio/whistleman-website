@@ -11,7 +11,7 @@ Transform a bloated 239MB portfolio site into a fast, polished, SEO-optimized sh
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
 - [x] **Phase 1: Critical Cleanup** — Delete duplicates, fix vendor paths, remove unused libs
-- [ ] **Phase 2: Image Optimization** — WebP conversion, lazy loading, responsive srcset
+- [x] **Phase 2: Image Optimization** — WebP conversion, lazy loading, responsive srcset
 - [ ] **Phase 3: Visual Bug Fixes** — Fix overflow, object-position, consistent margins
 - [ ] **Phase 4: Code Quality** — Memory leaks, throttle/debounce, XSS, fonts
 - [ ] **Phase 5: SEO Implementation** — OG/Twitter cards, sitemap, JSON-LD, alt texts
@@ -46,7 +46,7 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 02-01: Convert images to WebP and add lazy loading
+- [x] 02-01: Convert images to WebP and add lazy loading
 
 ### Phase 3: Visual Bug Fixes
 **Goal**: Fix visual rendering issues
@@ -136,7 +136,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Critical Cleanup | 1/1 | Complete | 2026-02-05 |
-| 2. Image Optimization | 0/1 | Not started | - |
+| 2. Image Optimization | 1/1 | Complete | 2026-02-05 |
 | 3. Visual Bug Fixes | 0/1 | Not started | - |
 | 4. Code Quality | 0/2 | Not started | - |
 | 5. SEO Implementation | 0/2 | Not started | - |
