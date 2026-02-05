@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# 1. To remove .html from the URL bar if someone types it
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R]
+
+# 2. To let the server find the file even if .html isn't typed
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_FILENAME}.html [NC,L]
+
+# 3. To serve your custom 404 page
+ErrorDocument 404 /404.html

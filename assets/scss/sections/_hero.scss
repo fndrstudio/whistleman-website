@@ -1,0 +1,141 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+  width: 98%;
+  margin-left: 1%;
+  min-height: 100vh;
+  position: relative;
+  margin-top: 50px;
+  padding: 180px 0 60px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+
+  .col-xl-5 {
+    padding: 0 !important;
+  }
+
+  @media (min-width: 1200px) {
+    &:after {
+      position: absolute;
+      content: "";
+      width: 44%;
+      top: 0;
+      bottom: 0;
+      z-index: 2;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    z-index: 2;
+  }
+
+  img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .container,
+  .container-fluid {
+    z-index: 3;
+    position: relative;
+    padding-left: 50px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 300;
+    font-family: 'Helvetica', sans-serif;
+  }
+
+  p {
+    font-family: "Montserrat", sans-serif;
+  }
+
+  blockquote {
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    margin: 40px 0;
+  }
+
+  .btn-get-started {
+    color: var(--contrast-color);
+    background: var(--accent-color);
+    font-family: 'bree serif', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+
+    &:hover {
+      background: color-mix(in srgb, var(--accent-color) 90%, white 15%);
+    }
+  }
+
+  .btn-watch-video {
+    font-size: 16px;
+    transition: 0.5s;
+    margin-left: 25px;
+    color: var(--default-color);
+    font-weight: 600;
+
+    i {
+      color: color-mix(in srgb, var(--default-color), transparent 50%);
+      font-size: 32px;
+      transition: 0.3s;
+      line-height: 0;
+      margin-right: 8px;
+    }
+
+    &:hover {
+      color: var(--default-color);
+
+      i {
+        color: var(--default-color);
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    padding: 390px 0 0px 0 !important;
+
+    blockquote {
+      margin: 20px 0 !important;
+    }
+
+    .container,
+    .container-fluid {
+      padding-left: 15px !important;
+    }
+
+    h1 {
+      font-size: 28px;
+      line-height: 36px;
+      padding: 0 !important;
+      margin-bottom: 0px !important;
+    }
+
+    p {
+      font-size: 12px !important;
+      padding-right: 30px;
+    }
+
+    .btn-get-started,
+    .btn-watch-video {
+      font-size: 13px;
+    }
+  }
+}

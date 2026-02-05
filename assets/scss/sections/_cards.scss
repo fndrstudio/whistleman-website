@@ -1,0 +1,170 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Cards Section
+--------------------------------------------------------------*/
+.cards {
+  margin: 0;
+  padding-top: 20px;
+
+  .container {
+    padding: 20px 50px;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    transition: transform 0.3s ease-in-out;
+    /* Smooth scrolling effect */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    /* Enable snapping */
+    scrollbar-width: none;
+    /* For Firefox */
+  }
+
+  .row::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and Edge */
+  }
+
+  .scroll-arrows {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    button {
+      color: black;
+      border: none;
+      font-size: 30px;
+      background-color: transparent;
+    }
+
+    .scroll-left:hover {
+      transform: translateX(-2px);
+      transition: 0.4s ease;
+    }
+
+    .scroll-right:hover {
+      transform: translateX(2px);
+      transition: 0.4s ease;
+    }
+  }
+
+  .cards-title h3 {
+    color: #000;
+    font-weight: 500;
+    font-size: 38px;
+  }
+
+  .card {
+    background-color: var(--background-color);
+    color: var(--default-color);
+    position: relative;
+    border-radius: 20px;
+    min-height: 500px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 25%, rgba(0, 0, 0, 0.5) 75%);
+      z-index: 2;
+      border-radius: 20px;
+    }
+
+    .card-body {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      padding: 30px;
+
+      h3 {
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 0px;
+        font-family: "montserrat", sans-serif;
+
+        a {
+          color: var(--contrast-color);
+        }
+      }
+    }
+  }
+
+  .image-wrapper img {
+    border-radius: 20px;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .usp-faq {
+    position: absolute;
+    /* Position relative to .image-wrapper */
+    top: 10px;
+    /* Adjust to place it at the top of the image */
+    left: 10px;
+    /* Distance from the left edge */
+    display: flex;
+    /* Arrange spans side by side */
+    gap: 10px;
+    /* Add spacing between spans */
+    z-index: 10;
+    /* Ensure the usp elements are above the image */
+  }
+
+  .usp-faq span {
+    background-color: #fff;
+    color: #000;
+    font-size: 14px;
+    font-family: "montserrat", sans-serif;
+    font-weight: 500;
+    padding: 5px 35px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px 15px;
+    }
+
+    .cards-title h3 {
+      width: 80%;
+      font-size: 30px;
+    }
+
+    .scroll-arrows {
+      display: none;
+    }
+
+    button {
+      display: none;
+    }
+
+    .row .col-lg-4 {
+      width: 80%;
+    }
+
+    .row {
+      gap: 10px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cards {
+    padding-top: 0px;
+
+    .card {
+      min-height: 350px !important;
+    }
+  }
+}

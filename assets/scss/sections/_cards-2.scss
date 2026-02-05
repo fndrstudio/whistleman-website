@@ -1,0 +1,209 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Cards 2 Section
+--------------------------------------------------------------*/
+.cards-2 {
+  padding-top: 20px;
+
+  .container-2 {
+    overflow-x: auto;
+    padding: 20px 50px;
+    scroll-snap-type: x mandatory;
+    /* Enable snapping */
+    scrollbar-width: none;
+    /* For Firefox */
+  }
+
+  .container::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and Edge */
+  }
+
+  .px-xl-5 {
+    padding: 0 !important;
+  }
+
+  h3 {
+    color: #000;
+    font-size: 40px;
+  }
+
+  .testimonial-item {
+    background-color: var(--accent-color);
+    /* Dark background for cards */
+    border-radius: 20px;
+    /* Rounded corners */
+    padding: 50px 20px 50px 30px;
+    /* Spacing inside the card */
+    margin-right: 20px;
+    align-items: center;
+    /* Vertically center content */
+    color: #fff;
+    /* White text for contrast */
+  }
+
+  @media(min-width: 768px) {
+    .testimonial-item {
+      width: 43%;
+    }
+  }
+
+  .testimonial-item:last-child {
+    margin-right: 0;
+    /* Remove margin for the last card */
+  }
+
+  .testimonial-item img {
+    width: 150px;
+    /* Fixed width for image */
+    height: 150px;
+    /* Fixed height for image */
+    border-radius: 20px;
+    /* Circular image */
+    object-fit: cover;
+    /* Ensure the image fits perfectly */
+    margin-right: 15px;
+    /* Space between image and content */
+  }
+
+  .testimonial-content {
+    display: flex;
+    flex-direction: column;
+    /* Stack quote and title vertically */
+    flex: 1;
+    /* Ensure content fills the available space */
+    padding: 60px 0px 60px 50px;
+    margin-left: 30px;
+    border-left: 1.5px solid #fff;
+  }
+
+  .testimonial-stars {
+    font-size: 18px;
+    /* Adjust size of the stars */
+    color: #fff;
+    /* Gold   color for the stars */
+    margin-bottom: 10px;
+    /* Spacing between stars and quote */
+    line-height: 1;
+    /* Keep stars close together */
+    text-align: left;
+    /* Align stars to the left */
+  }
+
+  .testimonial-quote {
+    font-size: 18px;
+    font-weight: 500;
+    /* Slightly bold for emphasis */
+    margin-bottom: 5px;
+    /* Space between quote and title */
+  }
+
+  .testimonial-title {
+    font-size: 14px;
+    color: #fff;
+    /* Lighter color for subtitle */
+    margin: 0;
+    font-family: 'montserrat', sans-serif;
+  }
+
+  @media (max-width: 800px) {
+    .container-2 {
+      padding: 20px 15px 20px 15px;
+      display: flex;
+      flex-direction: column;
+      margin-right: 15px;
+    }
+
+    .testimonial-item {
+      position: relative;
+      width: 50%;
+      padding: 20px 5px 20px 20px;
+      margin-right: 10px;
+      flex: 0 0 auto;
+      /* Ensure the cards don’t shrink */
+    }
+
+    .testimonial-item:last-child {
+      margin-right: 100px;
+    }
+
+    .testimonial-content {
+      padding: 10px 0px 10px 15px;
+      margin-left: 15px;
+    }
+
+    .testimonial-item img {
+      width: 100px;
+      height: 100px;
+      padding-right: 0;
+      margin-right: 0;
+    }
+
+    .testimonial-stars {
+      margin-bottom: 5px;
+    }
+
+    .testimonial-quote {
+      font-size: 14px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-title {
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    .cards-title h3 {
+      width: 120%;
+      font-size: 30px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .container-2 {
+      padding: 20px 15px 20px 15px;
+      display: flex;
+      flex-direction: column;
+      margin-right: 15px;
+    }
+
+    .testimonial-item {
+      position: relative;
+      width: 90%;
+      padding: 20px 5px 20px 20px;
+      margin-right: 10px;
+      flex: 0 0 auto;
+      /* Ensure the cards don’t shrink */
+    }
+
+    .testimonial-item:last-child {
+      margin-right: 100px;
+    }
+
+    .testimonial-content {
+      padding: 10px 0px 10px 15px;
+      margin-left: 15px;
+    }
+
+    .testimonial-item img {
+      width: 100px;
+      height: 100px;
+      padding-right: 0;
+      margin-right: 0;
+    }
+
+    .testimonial-quote {
+      font-size: 14px;
+    }
+
+    .testimonial-title {
+      font-size: 12px;
+    }
+
+    .cards-title h3 {
+      width: 120%;
+      font-size: 30px;
+    }
+  }
+}

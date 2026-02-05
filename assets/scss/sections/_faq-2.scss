@@ -1,0 +1,186 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Faq 2 Section
+--------------------------------------------------------------*/
+.faq-2 {
+  margin-top: 20px;
+
+  .container-fluid {
+    padding-left: 50px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+  }
+
+  .faq-content-container {
+    padding-right: 0px;
+  }
+
+  @media (max-width:768px) {
+    .container-fluid {
+      padding-left: 15px;
+    }
+
+    .faq-content-container {
+      margin-top: 0;
+      margin-left: 0 !important;
+      padding-right: 20px;
+      padding-left: 8px;
+    }
+  }
+
+  .content {
+    h3 {
+      color: #000;
+      font-weight: 500;
+      font-size: 38px;
+    }
+  }
+
+  .faq-container {
+    margin-top: 15px;
+
+    .faq-item {
+      position: relative;
+      padding: 20px 20px 20px 0px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      border-bottom: solid 1.5px rgba(112, 112, 112, 0.3);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      h3 {
+        font-weight: 500;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 24px;
+        line-height: 24px;
+        margin: 0 30px 0 0px;
+        transition: 0.3s;
+        cursor: pointer;
+        color: #14181D;
+
+        span {
+          color: var(--accent-color);
+          padding-right: 5px;
+        }
+
+        &:hover {
+          color: var(--accent-color);
+        }
+      }
+
+      .faq-content {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: 0.3s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+
+        p {
+          margin-bottom: 0;
+          overflow: hidden;
+        }
+      }
+
+      .faq-toggle {
+        position: absolute;
+        top: 15px;
+        right: 0px;
+        font-size: 45px;
+        line-height: 0;
+        transition: 0.3s;
+        cursor: pointer;
+        color: var(--accent-color);
+
+        &:hover {
+          color: var(--accent-color);
+        }
+      }
+    }
+
+    .faq-active {
+      h3 {
+        color: var(--accent-color);
+      }
+
+      .faq-content {
+        grid-template-rows: 1fr;
+        visibility: visible;
+        opacity: 1;
+        padding-top: 10px;
+      }
+
+      .faq-toggle {
+        transform: rotate(45deg);
+        /* Rotate the "+" to create a "×" */
+        color: var(--accent-color);
+      }
+    }
+  }
+
+  .faq-no-mobile {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    /* Keep image at the bottom of the container */
+    flex-direction: column;
+  }
+
+  .image-wrapper {
+    position: relative;
+    /* Establish positioning context for child elements */
+    width: 100%;
+    /* Ensure it spans the container width */
+  }
+
+  .image-wrapper img {
+    display: block;
+    width: 100%;
+    /* Make the image responsive */
+    border-radius: 10px;
+    /* Add rounded corners */
+  }
+
+  .usp-faq {
+    position: absolute;
+    /* Position relative to .image-wrapper */
+    top: 10px;
+    /* Adjust to place it at the top of the image */
+    left: 10px;
+    /* Distance from the left edge */
+    display: flex;
+    /* Arrange spans side by side */
+    gap: 10px;
+    /* Add spacing between spans */
+    z-index: 10;
+    /* Ensure the usp elements are above the image */
+  }
+
+  .usp-faq span {
+    background-color: #fff;
+    color: #000;
+    font-size: 14px;
+    font-family: "montserrat", sans-serif;
+    font-weight: 500;
+    padding: 5px 35px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width:768px) {
+    .faq-no-mobile {
+      display: none !important;
+    }
+
+    .content h3 {
+      font-size: 30px;
+    }
+
+    .faq-container .faq-item h3 {
+      font-size: 20px;
+    }
+  }
+}
