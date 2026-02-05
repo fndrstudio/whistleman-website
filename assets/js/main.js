@@ -344,28 +344,34 @@ document.addEventListener('DOMContentLoaded', function() {
         if (existingError) {
             existingError.remove();
         }
-        
-        // Create error display
+
+        // Create error display using safe DOM methods
         const errorDiv = document.createElement('div');
         errorDiv.className = 'form-error';
-        errorDiv.innerHTML = `
-            <div style="background: #ffebee; color: #c62828; padding: 10px; border-radius: 6px; 
-                        margin-bottom: 15px; border-left: 4px solid #c62828; font-size: 0.9rem;
-                        display: flex; align-items: center; gap: 8px;">
-                <i class="fas fa-exclamation-circle"></i> ${message}
-            </div>
-        `;
-        
+
+        const innerDiv = document.createElement('div');
+        innerDiv.style.cssText = 'background: #ffebee; color: #c62828; padding: 10px; border-radius: 6px; margin-bottom: 15px; border-left: 4px solid #c62828; font-size: 0.9rem; display: flex; align-items: center; gap: 8px;';
+
+        const icon = document.createElement('i');
+        icon.className = 'fas fa-exclamation-circle';
+
+        const text = document.createElement('span');
+        text.textContent = message;  // Safe: textContent escapes HTML
+
+        innerDiv.appendChild(icon);
+        innerDiv.appendChild(text);
+        errorDiv.appendChild(innerDiv);
+
         // Insert error at the top of the form
         if (downloadForm.firstChild) {
             downloadForm.insertBefore(errorDiv, downloadForm.firstChild);
         } else {
             downloadForm.appendChild(errorDiv);
         }
-        
+
         // Add animation
         errorDiv.style.animation = 'slideDown 0.3s ease';
-        
+
         // Auto-remove error after 5 seconds
         setTimeout(() => {
             if (errorDiv.parentNode) {
