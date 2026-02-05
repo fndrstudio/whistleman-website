@@ -15,8 +15,8 @@ Requirements for initial optimization. Each maps to roadmap phases.
 
 ### Performance
 
-- [ ] **PERF-01**: Convert images to WebP format (196MB → ~20MB target)
-- [ ] **PERF-02**: Add lazy loading to all below-fold images
+- [x] **PERF-01**: Convert images to WebP format (196MB → ~20MB target)
+- [x] **PERF-02**: Add lazy loading to all below-fold images
 - [ ] **PERF-03**: Add srcset responsive variants for images
 
 ### Visual
@@ -85,8 +85,8 @@ Which phases cover which requirements. Updated by create-roadmap.
 | CLEAN-01 | Phase 1 | Complete |
 | CLEAN-02 | Phase 1 | Complete |
 | CLEAN-03 | Phase 1 | Complete |
-| PERF-01 | Phase 2 | Pending |
-| PERF-02 | Phase 2 | Pending |
+| PERF-01 | Phase 2 | Complete |
+| PERF-02 | Phase 2 | Complete |
 | PERF-03 | Phase 2 | Pending |
 | VIS-01 | Phase 3 | Pending |
 | VIS-02 | Phase 3 | Pending |
