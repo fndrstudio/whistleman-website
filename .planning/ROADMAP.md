@@ -13,7 +13,7 @@ Transform a bloated 239MB portfolio site into a fast, polished, SEO-optimized sh
 - [x] **Phase 1: Critical Cleanup** — Delete duplicates, fix vendor paths, remove unused libs
 - [x] **Phase 2: Image Optimization** — WebP conversion, lazy loading, responsive srcset
 - [x] **Phase 3: Visual Bug Fixes** — Fix overflow, object-position, consistent margins
-- [ ] **Phase 4: Code Quality** — Memory leaks, throttle/debounce, XSS, fonts
+- [x] **Phase 4: Code Quality** — Memory leaks, throttle/debounce, XSS, fonts
 - [ ] **Phase 5: SEO Implementation** — OG/Twitter cards, sitemap, JSON-LD, alt texts
 - [ ] **Phase 6: Animation & Polish** — Lenis scrolling, GSAP animations, micro-interactions
 - [ ] **Phase 7: UX Enhancements** — Mobile nav, CTA visibility, team section
@@ -75,8 +75,8 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 04-01: Fix memory leaks and add throttle/debounce
-- [ ] 04-02: Fix XSS issues and optimize font loading
+- [x] 04-01: Fix memory leaks and add throttle/debounce
+- [x] 04-02: Fix XSS issues and optimize font loading
 
 ### Phase 5: SEO Implementation
 **Goal**: Discoverable and shareable on social/search
@@ -138,7 +138,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | 1. Critical Cleanup | 1/1 | Complete | 2026-02-05 |
 | 2. Image Optimization | 1/1 | Complete | 2026-02-05 |
 | 3. Visual Bug Fixes | 1/1 | Complete | 2026-02-05 |
-| 4. Code Quality | 0/2 | Not started | - |
+| 4. Code Quality | 2/2 | Complete | 2026-02-05 |
 | 5. SEO Implementation | 0/2 | Not started | - |
 | 6. Animation & Polish | 0/3 | Not started | - |
 | 7. UX Enhancements | 0/2 | Not started | - |

@@ -27,10 +27,10 @@ Requirements for initial optimization. Each maps to roadmap phases.
 
 ### Code Quality
 
-- [ ] **CODE-01**: Fix JavaScript memory leaks
-- [ ] **CODE-02**: Add throttle/debounce to scroll handlers
-- [ ] **CODE-03**: Replace innerHTML with textContent (XSS prevention)
-- [ ] **CODE-04**: Optimize Google Fonts loading
+- [x] **CODE-01**: Fix JavaScript memory leaks
+- [x] **CODE-02**: Add throttle/debounce to scroll handlers
+- [x] **CODE-03**: Replace innerHTML with textContent (XSS prevention)
+- [x] **CODE-04**: Optimize Google Fonts loading
 
 ### SEO
 
@@ -91,10 +91,10 @@ Which phases cover which requirements. Updated by create-roadmap.
 | VIS-01 | Phase 3 | Complete |
 | VIS-02 | Phase 3 | Complete |
 | VIS-03 | Phase 3 | Complete |
-| CODE-01 | Phase 4 | Pending |
-| CODE-02 | Phase 4 | Pending |
-| CODE-03 | Phase 4 | Pending |
-| CODE-04 | Phase 4 | Pending |
+| CODE-01 | Phase 4 | Complete |
+| CODE-02 | Phase 4 | Complete |
+| CODE-03 | Phase 4 | Complete |
+| CODE-04 | Phase 4 | Complete |
 | SEO-01 | Phase 5 | Pending |
 | SEO-02 | Phase 5 | Pending |
 | SEO-03 | Phase 5 | Pending |
