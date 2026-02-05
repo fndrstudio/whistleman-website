@@ -417,13 +417,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Make popup draggable on desktop
     if (window.innerWidth > 768 && popupContent) {
         popupContent.addEventListener('mousedown', dragStart);
-        document.addEventListener('mousemove', drag);
-        document.addEventListener('mouseup', dragEnd);
-        
+
         // Prevent dragging on buttons
-        const noDragElements = [closeBtn, showFormBtn, document.querySelector('.download-btn'), 
+        const noDragElements = [closeBtn, showFormBtn, document.querySelector('.download-btn'),
                               document.querySelector('.submit-btn'), document.querySelector('.final-download-btn')];
-        
+
         noDragElements.forEach(element => {
             if (element) {
                 element.addEventListener('mousedown', function(e) {
@@ -432,31 +430,39 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     function dragStart(e) {
         initialX = e.clientX - xOffset;
         initialY = e.clientY - yOffset;
-        
+
         if (e.target === popupContent || e.target.classList.contains('balloon-header')) {
             isDragging = true;
+            // Add document listeners only when dragging starts (prevents memory leaks)
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', dragEnd);
         }
     }
-    
+
     function drag(e) {
         if (isDragging) {
             e.preventDefault();
             currentX = e.clientX - initialX;
             currentY = e.clientY - initialY;
-            
+
             xOffset = currentX;
             yOffset = currentY;
-            
+
             popup.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
         }
     }
-    
+
     function dragEnd() {
-        isDragging = false;
+        if (isDragging) {
+            isDragging = false;
+            // Clean up document listeners to prevent memory leaks
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', dragEnd);
+        }
     }
     
     // Add animation keyframes
