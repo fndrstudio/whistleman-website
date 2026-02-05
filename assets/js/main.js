@@ -2,6 +2,21 @@
   "use strict";
 
   /**
+   * Throttle utility - limits function execution to once per specified interval
+   * Used for performance optimization on scroll/resize handlers
+   */
+  function throttle(func, limit) {
+    let inThrottle;
+    return function(...args) {
+      if (!inThrottle) {
+        func.apply(this, args);
+        inThrottle = true;
+        setTimeout(() => inThrottle = false, limit);
+      }
+    };
+  }
+
+  /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
   function toggleScrolled() {
@@ -12,7 +27,7 @@
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
 
-  document.addEventListener('scroll', toggleScrolled);
+  document.addEventListener('scroll', throttle(toggleScrolled, 16));
   window.addEventListener('load', toggleScrolled);
 
   document.addEventListener('DOMContentLoaded', function() {
