@@ -1352,6 +1352,20 @@ section,
   .faq .faq-no-mobile img {
     max-height: 700px;
     width: auto;
+    object-fit: contain;
+    object-position: bottom right;
+  }
+}
+
+/* Prevent image stretching at ultra-wide viewports (2000px+) */
+@media (min-width: 2000px) {
+  .faq .faq-no-mobile .faq-img {
+    max-width: 600px;
+    max-height: 750px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: bottom right;
   }
 }
 
