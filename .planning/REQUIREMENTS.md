@@ -21,9 +21,9 @@ Requirements for initial optimization. Each maps to roadmap phases.
 
 ### Visual
 
-- [ ] **VIS-01**: Fix horizontal overflow (100vw → 100%)
-- [ ] **VIS-02**: Add object-position to fixed-size images
-- [ ] **VIS-03**: Standardize left margins with CSS variable
+- [x] **VIS-01**: Fix horizontal overflow (100vw → 100%)
+- [x] **VIS-02**: Add object-position to fixed-size images
+- [x] **VIS-03**: Standardize left margins with CSS variable
 
 ### Code Quality
 
@@ -88,9 +88,9 @@ Which phases cover which requirements. Updated by create-roadmap.
 | PERF-01 | Phase 2 | Complete |
 | PERF-02 | Phase 2 | Complete |
 | PERF-03 | Phase 2 | Pending |
-| VIS-01 | Phase 3 | Pending |
-| VIS-02 | Phase 3 | Pending |
-| VIS-03 | Phase 3 | Pending |
+| VIS-01 | Phase 3 | Complete |
+| VIS-02 | Phase 3 | Complete |
+| VIS-03 | Phase 3 | Complete |
 | CODE-01 | Phase 4 | Pending |
 | CODE-02 | Phase 4 | Pending |
 | CODE-03 | Phase 4 | Pending |
