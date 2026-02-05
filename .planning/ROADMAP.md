@@ -10,7 +10,7 @@ Transform a bloated 239MB portfolio site into a fast, polished, SEO-optimized sh
 - Integer phases (1, 2, 3): Planned milestone work
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
-- [ ] **Phase 1: Critical Cleanup** — Delete duplicates, fix vendor paths, remove unused libs
+- [x] **Phase 1: Critical Cleanup** — Delete duplicates, fix vendor paths, remove unused libs
 - [ ] **Phase 2: Image Optimization** — WebP conversion, lazy loading, responsive srcset
 - [ ] **Phase 3: Visual Bug Fixes** — Fix overflow, object-position, consistent margins
 - [ ] **Phase 4: Code Quality** — Memory leaks, throttle/debounce, XSS, fonts
@@ -32,7 +32,7 @@ Transform a bloated 239MB portfolio site into a fast, polished, SEO-optimized sh
 **Plans**: TBD
 
 Plans:
-- [ ] 01-01: Delete duplicate vendor, rename folder, update paths
+- [x] 01-01: Delete duplicate vendor, rename folder, update paths
 
 ### Phase 2: Image Optimization
 **Goal**: Reduce image payload for fast loading
@@ -135,7 +135,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Critical Cleanup | 0/1 | Not started | - |
+| 1. Critical Cleanup | 1/1 | Complete | 2026-02-05 |
 | 2. Image Optimization | 0/1 | Not started | - |
 | 3. Visual Bug Fixes | 0/1 | Not started | - |
 | 4. Code Quality | 0/2 | Not started | - |

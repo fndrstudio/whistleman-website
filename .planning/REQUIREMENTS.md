@@ -9,9 +9,9 @@ Requirements for initial optimization. Each maps to roadmap phases.
 
 ### Cleanup
 
-- [ ] **CLEAN-01**: Delete duplicate vendor directory (save 10MB)
-- [ ] **CLEAN-02**: Rename `vendor copy` to `vendor`, update all HTML paths
-- [ ] **CLEAN-03**: Remove unused libraries (Isotope, ImagesLoaded, AOS)
+- [x] **CLEAN-01**: Delete duplicate vendor directory (save 10MB)
+- [x] **CLEAN-02**: Rename `vendor copy` to `vendor`, update all HTML paths
+- [x] **CLEAN-03**: Remove unused libraries (Isotope, ImagesLoaded, AOS)
 
 ### Performance
 
@@ -82,9 +82,9 @@ Which phases cover which requirements. Updated by create-roadmap.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CLEAN-01 | Phase 1 | Pending |
-| CLEAN-02 | Phase 1 | Pending |
-| CLEAN-03 | Phase 1 | Pending |
+| CLEAN-01 | Phase 1 | Complete |
+| CLEAN-02 | Phase 1 | Complete |
+| CLEAN-03 | Phase 1 | Complete |
 | PERF-01 | Phase 2 | Pending |
 | PERF-02 | Phase 2 | Pending |
 | PERF-03 | Phase 2 | Pending |
