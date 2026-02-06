@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-02-05)
 ## Current Position
 
 Phase: 5 of 7 (SEO Implementation)
-Plan: 1/2 complete
-Status: In progress
-Last activity: 2026-02-06 - Completed 05-01-PLAN.md (SEO Meta Tags and Search Engine Basics)
+Plan: 2/2 complete
+Status: Phase complete
+Last activity: 2026-02-06 - Completed 05-02-PLAN.md (Structured Data & Image Alt Text)
 
-Progress: ██████░░░░ 77%
+Progress: ███████░░░ 88%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
-- Average duration: 10 min
-- Total execution time: 1.00 hours
+- Total plans completed: 7
+- Average duration: 11 min
+- Total execution time: 1.33 hours
 
 **By Phase:**
 
@@ -31,11 +31,11 @@ Progress: ██████░░░░ 77%
 | 02-image-optimization | 1 | 15 min | 15 min |
 | 03-visual-bug-fixes | 1 | 25 min | 25 min |
 | 04-code-quality | 2 | 10 min | 5 min |
-| 05-seo-implementation | 1 | 4 min | 4 min |
+| 05-seo-implementation | 2 | 20 min | 10 min |
 
 **Recent Trend:**
-- Last 3 plans: 8min, 2min, 4min
-- Trend: SEO meta tag additions very fast - straightforward HTML edits
+- Last 3 plans: 2min, 4min, 16min
+- Trend: Structured data + alt text took longer - systematic updates across 11 HTML files
 
 ## Accumulated Context
 
@@ -62,6 +62,10 @@ Recent decisions affecting current work:
 | OG image references to future files | 05-01 | Meta tags can reference images before they're created - design task separate |
 | Clean URLs in sitemap | 05-01 | Matches .htaccess URL rewriting - no .html extensions in sitemap.xml |
 | Remove keywords meta tag | 05-01 | Deprecated since 2009, ignored by all major search engines |
+| Organization + LocalBusiness dual schema | 05-02 | Covers both general and local search scenarios - enables knowledge graph and local pack |
+| Article schema for case studies | 05-02 | More specific than CreativeWork - better Google Rich Results support |
+| role=presentation for decorative images | 05-02 | Explicitly marks nav icons as decorative - prevents redundant screen reader announcements |
+| Natural language alt text (80-125 chars) | 05-02 | Better for accessibility and SEO than keyword stuffing |
 
 ### Pending Todos
 
@@ -76,7 +80,7 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-06
-Stopped at: Completed 05-01-PLAN.md (SEO Meta Tags and Search Engine Basics)
+Stopped at: Completed 05-02-PLAN.md (Structured Data & Image Alt Text) - Phase 5 complete
 Resume file: None
 
-Next action: Continue Phase 5 with 05-02-PLAN.md (Structured Data)
+Next action: Phase 6 (Polish & Animations) - Lenis smooth scrolling + GSAP animations
