@@ -1553,6 +1553,17 @@ section,
   font-size: 38px;
 }
 
+/* Card wrapper styles for hover lift (Phase 6) */
+.cards .row > div {
+  overflow: visible !important;
+}
+
+.cards .row > div > a {
+  display: block;
+  text-decoration: none;
+  overflow: visible;
+}
+
 .cards .card {
   background-color: var(--background-color);
   color: var(--default-color);
@@ -1869,6 +1880,9 @@ section,
   scrollbar-width: none;
   /* For Firefox */
   overflow-x: auto;
+  overflow-y: visible; /* Allow testimonial hover lift (Phase 6) */
+  padding-top: 15px; /* Space for lift effect (Phase 6) */
+  padding-bottom: 15px; /* Space for shadow (Phase 6) */
 }
 
 .cards-2 .row::-webkit-scrollbar {
@@ -2363,6 +2377,17 @@ section,
   color: #14181C;
   font-weight: 500;
   font-size: 38px;
+}
+
+/* Portfolio card wrapper styles for hover lift (Phase 6) */
+.cards-portfolio .row > div {
+  overflow: visible !important;
+}
+
+.cards-portfolio .row > div > a {
+  display: block;
+  text-decoration: none;
+  overflow: visible;
 }
 
 .cards-portfolio .card {
