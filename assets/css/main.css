@@ -1578,8 +1578,8 @@ section,
 }
 
 .cards .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px) !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2) !important;
 }
 
 .cards .card:before {
@@ -1609,7 +1609,7 @@ section,
 }
 
 .cards .card:hover .card-body {
-  transform: translateY(-4px);
+  transform: translateY(-4px) !important;
 }
 
 .cards .card .card-body h3 {
