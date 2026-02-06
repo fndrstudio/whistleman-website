@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>404 - Page Not Found | Whistleman Media</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Let's get you back on track." />
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo-whiteonblack.png" rel="icon">
+  <link href="assets/img/logo-whiteonblack.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--background-color);
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .error-content {
+      max-width: 600px;
+    }
+
+    .error-code {
+      font-family: 'Bree Serif', serif;
+      font-size: clamp(8rem, 20vw, 12rem);
+      font-weight: 400;
+      line-height: 1;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    .error-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 600;
+      color: var(--heading-color);
+      margin-bottom: 1rem;
+    }
+
+    .error-message {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      color: var(--default-color);
+      opacity: 0.8;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .error-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--accent-color);
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .error-btn:hover {
+      background-color: color-mix(in srgb, var(--accent-color), #000 15%);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header class="desktop-header">
+    <div class="desktop-navigation">
+      <a href="index.html" class="logo">
+        whistleman media
+      </a>
+      <nav class="desktop-nav">
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html" class="contact-btn-header">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <a href="index.html" class="mobile-logo">
+    whistleman media
+  </a>
+  <nav class="mobile-nav">
+    <a href="index.html" class="bloc-icon" data-nav="home">
+      <i class="bi bi-house-fill"></i>
+      <span>Home</span>
+    </a>
+    <a href="services.html" class="bloc-icon" data-nav="services">
+      <i class="bi bi-briefcase-fill"></i>
+      <span>Services</span>
+    </a>
+    <a href="portfolio.html" class="bloc-icon" data-nav="portfolio">
+      <i class="bi bi-collection-fill"></i>
+      <span>Portfolio</span>
+    </a>
+    <a href="contact.html" class="mobile-nav-cta" data-nav="contact">
+      <i class="bi bi-envelope-fill"></i>
+      <span>Contact</span>
+    </a>
+  </nav>
+
+  <main class="main">
+    <section class="error-page">
+      <div class="error-content">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-message">
+          Oops! The page you're looking for seems to have wandered off.
+          Let's get you back to creating something amazing.
+        </p>
+        <a href="index.html" class="error-btn">
+          <i class="bi bi-arrow-left"></i>
+          Back to Home
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
