@@ -103,14 +103,13 @@ Plans:
   2. Sections animate in on scroll with GSAP
   3. Buttons have hover/click micro-interactions
   4. No janky or stuttering animations
-**Research**: Likely (new library integration)
-**Research topics**: Lenis CDN setup, GSAP ScrollTrigger patterns, scroll animation best practices
-**Plans**: TBD
+**Research**: Complete (06-RESEARCH.md)
+**Plans**: 3 plans
 
 Plans:
-- [ ] 06-01: Integrate Lenis smooth scrolling
-- [ ] 06-02: Add GSAP ScrollTrigger animations
-- [ ] 06-03: Implement micro-interactions
+- [ ] 06-01-PLAN.md — Add Lenis + GSAP CDN, create animations.js foundation, scroll progress bar
+- [ ] 06-02-PLAN.md — Add hero entrance sequence, section reveals with stagger, hero parallax
+- [ ] 06-03-PLAN.md — Add button/card/nav micro-interactions (CSS), human verification
 
 ### Phase 7: UX Enhancements
 **Goal**: Better user experience, especially mobile
@@ -130,7 +129,7 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
