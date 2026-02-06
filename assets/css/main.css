@@ -3177,6 +3177,85 @@ section,
   /* Hidden initially, will be shown with JS */
 }
 
+/* Mobile teaser - hidden on desktop */
+.popup-teaser {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .popup-teaser {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-color);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(255, 87, 51, 0.4);
+    animation: teaserPulse 2s ease-in-out infinite;
+  }
+
+  .popup-teaser .teaser-icon {
+    font-size: 1.2rem;
+  }
+
+  .popup-teaser .teaser-tap {
+    margin-left: 4px;
+    animation: tapBounce 1s ease-in-out infinite;
+  }
+
+  @keyframes tapBounce {
+    0%, 100% {
+      transform: translateY(0) rotate(-15deg);
+    }
+    50% {
+      transform: translateY(-3px) rotate(-15deg);
+    }
+  }
+
+  /* Pulse animation */
+  @keyframes teaserPulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 4px 20px rgba(255, 87, 51, 0.4);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 6px 30px rgba(255, 87, 51, 0.6);
+    }
+  }
+
+  /* Hide full content initially on mobile (teaser mode) */
+  .popup-balloon.teaser-mode .balloon-content {
+    display: none;
+  }
+
+  /* Show full content when expanded */
+  .popup-balloon.expanded-mode .popup-teaser {
+    display: none;
+  }
+
+  .popup-balloon.expanded-mode .balloon-content {
+    display: block;
+    animation: expandIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+
+  @keyframes expandIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8) translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+}
+
 :root {
   --balloon-bg: #ffffff;
   --light-bg: #f8f9fa;
@@ -3526,21 +3605,21 @@ section,
     } */
 }
 
-/* Exit animation */
+/* Exit animation - swipe down */
 @keyframes balloonExit {
   0% {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 
   100% {
     opacity: 0;
-    transform: translateY(50px) scale(0.8);
+    transform: translateY(120%);
   }
 }
 
 .balloon-exit {
-  animation: balloonExit 0.5s ease forwards;
+  animation: balloonExit 0.4s cubic-bezier(0.4, 0, 1, 1) forwards;
 }
 
 /* Form-specific styles */
