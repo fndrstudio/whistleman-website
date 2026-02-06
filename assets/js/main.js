@@ -182,34 +182,57 @@ document.addEventListener('DOMContentLoaded', function() {
     const showFormBtn = document.querySelector('.show-form-btn');
     const subscribeButton = document.getElementById('subscribe-button');
     const downloadForm = document.getElementById('download-form');
-    
+    const popupTeaser = document.querySelector('.popup-teaser');
+
     const initialContent = document.getElementById('initial-content');
     const formContent = document.getElementById('form-content');
     const successContent = document.getElementById('success-content');
-    
+
     // Dragging variables
     let isDragging = false;
     let currentX, currentY, initialX, initialY, xOffset = 0, yOffset = 0;
     const popupContent = document.querySelector('.balloon-content');
-    
+
+    // Detect mobile
+    const isMobile = window.innerWidth <= 768;
+
     // Show the popup after a short delay
     setTimeout(function() {
         if (popup) {
             popup.style.display = 'block';
-            popup.classList.add('balloon-entrance');
-            
-            // Add a gentle bounce effect after entrance
-            setTimeout(function() {
-                popup.style.animation = 'floatUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards';
-            }, 800);
+
+            if (isMobile) {
+                // Mobile: show teaser first
+                popup.classList.add('teaser-mode');
+                popup.classList.add('balloon-entrance');
+            } else {
+                // Desktop: show full popup
+                popup.classList.add('balloon-entrance');
+
+                // Add a gentle bounce effect after entrance
+                setTimeout(function() {
+                    popup.style.animation = 'floatUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards';
+                }, 800);
+            }
         }
     }, 1500);
+
+    // Teaser click - expand to full popup (mobile)
+    if (popupTeaser) {
+        popupTeaser.addEventListener('click', function() {
+            popup.classList.remove('teaser-mode');
+            popup.classList.add('expanded-mode');
+        });
+    }
     
     // Close button functionality
     function closePopup() {
         popup.classList.remove('balloon-entrance');
+        popup.classList.remove('teaser-mode');
+        popup.classList.remove('expanded-mode');
+        popup.style.animation = ''; // Clear inline animation so class animation works
         popup.classList.add('balloon-exit');
-        
+
         setTimeout(function() {
             popup.style.display = 'none';
         }, 500);
