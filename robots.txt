@@ -1,0 +1,11 @@
+# Whistleman Media - robots.txt
+# https://whistlemanmedia.nl/robots.txt
+
+User-agent: *
+Allow: /
+Disallow: /cgi-bin/
+Disallow: /.git/
+Disallow: /errors/
+
+# Sitemap Location
+Sitemap: https://whistlemanmedia.nl/sitemap.xml
