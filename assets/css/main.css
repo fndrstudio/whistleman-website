@@ -3429,3 +3429,36 @@ section,
         padding: 12px;
     }
 }
+
+/*--------------------------------------------------------------
+# Animation Utilities (Phase 6)
+--------------------------------------------------------------*/
+
+/* Scroll Progress Bar - subtle per user decision */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent-color);
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 99999;
+  pointer-events: none;
+}
+
+/* Visibility utility for GSAP animations - prevents FOUC */
+.gs-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Reduced motion: hide progress bar movement indicator */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress {
+    /* Keep visible but no animation would be jarring */
+    transform: scaleX(1);
+    opacity: 0.3;
+  }
+}
