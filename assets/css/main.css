@@ -1411,6 +1411,14 @@ section,
   /* Add rounded corners */
 }
 
+@media (min-width: 1800px) {
+  .faq .image-wrapper img {
+    max-height: 700px;
+    width: auto;
+    max-width: 100%;
+  }
+}
+
 .faq .usp-faq {
   position: absolute;
   /* Position relative to .image-wrapper */
@@ -1497,12 +1505,16 @@ section,
   transition: transform 0.3s ease-in-out;
   /* Smooth scrolling effect */
   overflow-x: auto;
+  overflow-y: visible; /* Allow card hover lift to show (Phase 6) */
   scroll-snap-type: x mandatory;
   /* Enable snapping */
   scrollbar-width: none;
   /* For Firefox */
   width: 100vw;
   padding-right: 150px;
+  padding-top: 15px; /* Space for card lift effect (Phase 6) */
+  padding-bottom: 15px; /* Space for card shadow (Phase 6) */
+  margin-top: -15px; /* Compensate for padding (Phase 6) */
 }
 
 .cards .row::-webkit-scrollbar {
@@ -2307,10 +2319,13 @@ section,
   transition: transform 0.3s ease-in-out;
   /* Smooth scrolling effect */
   /* overflow-x: auto; */
+  overflow-y: visible; /* Allow card hover lift to show (Phase 6) */
   scroll-snap-type: x mandatory;
   /* Enable snapping */
   scrollbar-width: none;
   /* For Firefox */
+  padding-top: 15px; /* Space for card lift effect (Phase 6) */
+  padding-bottom: 15px; /* Space for card shadow (Phase 6) */
 }
 
 .cards-portfolio .row::-webkit-scrollbar {
@@ -3157,11 +3172,18 @@ section,
     cursor: pointer;
 }
 
-.download-btn:hover {
+.download-btn:hover,
+.final-download-btn:hover {
     /* background: linear-gradient(to right, var(--accent-hover), #d5de2c); */
     transform: translateY(-2px);
-    /* box-shadow: 0 6px 16px rgba(204, 213, 19, 0.4); */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     color: #333;
+}
+
+.download-btn:active,
+.final-download-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .small-note {
@@ -3585,13 +3607,40 @@ section,
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Footer CTA Button Micro-interactions (Phase 6) */
+.btn-footer {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--accent-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: transform 0.3s ease-in-out,
+              box-shadow 0.3s ease-in-out,
+              background-color 0.3s ease-in-out;
+}
+
+.btn-footer:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 87, 51, 0.3);
+  color: #fff;
+}
+
+.btn-footer:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(255, 87, 51, 0.2);
+}
+
 /* Reduced Motion: Button Interactions */
 @media (prefers-reduced-motion: reduce) {
   .hero .btn-get-started,
   .contact-btn-header,
   .download-btn,
   .submit-btn,
-  .show-form-btn {
+  .show-form-btn,
+  .btn-footer,
+  .final-download-btn {
     transition: background-color 0.2s ease-in-out,
                 box-shadow 0.2s ease-in-out;
   }
@@ -3605,7 +3654,11 @@ section,
   .submit-btn:hover,
   .submit-btn:active,
   .show-form-btn:hover,
-  .show-form-btn:active {
+  .show-form-btn:active,
+  .btn-footer:hover,
+  .btn-footer:active,
+  .final-download-btn:hover,
+  .final-download-btn:active {
     transform: none;
   }
 }
