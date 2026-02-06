@@ -1,227 +1,234 @@
 # Coding Conventions
 
-**Analysis Date:** 2025-02-05
+**Analysis Date:** 2026-02-06
 
 ## Naming Patterns
 
 **Files:**
-- HTML pages: lowercase with hyphens or spaces (inconsistent): `index.html`, `portfolio.html`, `inner circle.html`, `l'OUI.html`
-- SCSS partials: underscore prefix with kebab-case: `_variables.scss`, `_general.scss`, `_call-to-action.scss`
-- SCSS directories: lowercase: `layouts/`, `sections/`
-- JavaScript: lowercase: `main.js`
-- Images: mixed case with spaces (problematic): `inner circle - case.jpg`, `burger n shakeklogo.png`
+- HTML pages: lowercase with hyphens (exception: spaces exist in `portfolio/inner circle.html`, `portfolio/l'OUI.html` - inconsistent)
+- CSS: lowercase (`main.css`)
+- JavaScript: lowercase (`main.js`)
+- Images: lowercase with hyphens (`hero-bg-wmm.webp`, `burgernshake-hero-photo.webp`)
 
 **CSS Classes:**
-- BEM-like structure NOT used
-- Descriptive lowercase with hyphens: `.hero-section`, `.btn-get-started`, `.faq-content`
-- Bootstrap utility classes mixed with custom: `.d-flex`, `.col-lg-4`, `.align-items-center`
-- Component classes: `.card`, `.testimonial-item`, `.footer-left`
-
-**JavaScript Functions:**
-- camelCase: `toggleScrolled()`, `mobileNavToogle()`, `closePopup()`, `showFormDirectly()`
-- Note: typo in `mobileNavToogle` (should be `mobileNavToggle`)
+- BEM-lite approach: component-based naming with hyphens
+- Examples: `.desktop-header`, `.mobile-nav`, `.btn-get-started`, `.faq-container`, `.cards-portfolio`
+- Numbered variants for similar sections: `.cards`, `.cards-2`, `.cards-4`, `.cards-5`
+- State classes: `.faq-active`, `.mobile-nav-active`, `.balloon-entrance`, `.balloon-exit`
 
 **CSS Variables:**
-- Semantic naming with double-hyphen prefix: `--background-color`, `--accent-color`, `--heading-font`
-- Scoped by purpose: `--nav-color`, `--nav-hover-color`, `--nav-dropdown-background-color`
+- Semantic naming with double-hyphens: `--background-color`, `--accent-color`, `--heading-font`
+- Category prefixes: `--nav-color`, `--nav-hover-color`, `--nav-dropdown-background-color`
+
+**JavaScript Functions:**
+- camelCase: `toggleScrolled()`, `mobileNavToogle()`, `closePopup()`, `showFormDirectly()`, `ensurePopupVisible()`
+- Note: typo in `mobileNavToogle` (should be `mobileNavToggle`)
+
+**JavaScript Variables:**
+- camelCase: `selectBody`, `selectHeader`, `mobileNavToggleBtn`, `scrollAmount`
+- Constants: camelCase (no UPPER_SNAKE_CASE used)
 
 ## Code Style
 
 **Formatting:**
-- Tool: VS Code Easy Compile (for SCSS only)
-- No Prettier, ESLint, or other formatters configured
-- Indentation: 2 spaces (SCSS), mixed (HTML/JS)
-- HTML attributes: single line or multi-line (inconsistent)
+- No automated formatter configured (no `.prettierrc`, `.editorconfig`)
+- Indentation: 2 spaces in HTML/CSS, mixed in JS (mostly 2 spaces with some 4-space blocks)
+- Line length: No enforced limit
 
 **Linting:**
-- None configured
-- No `.eslintrc`, `.prettierrc`, or similar files
+- No ESLint or other linter configured
+- No TypeScript (pure vanilla JavaScript)
 
-**SCSS Structure:**
-```scss
-// main: ../main.scss  <- Comment indicates compilation target
-/*--------------------------------------------------------------
-# Section Name
---------------------------------------------------------------*/
-.component {
-  property: value;
-
-  .child {
-    property: value;
-  }
-
-  @media (max-width: 768px) {
-    property: value;
-  }
-}
-```
+**HTML Structure:**
+- DOCTYPE with lang="en"
+- Meta charset utf-8, viewport meta tag
+- Consistent head structure: Google Analytics > meta tags > favicons > fonts > vendor CSS > main CSS
+- Body class indicating page type: `class="index-page"`
 
 ## Import Organization
 
-**SCSS Order (`assets/scss/main.scss`):**
-1. Variables: `@import './_variables.scss';`
-2. Layouts: `@import './layouts/_general.scss';` etc.
-3. Sections: via `@import './_sections.scss';` barrel file
+**HTML Head Order:**
+1. Google Analytics script
+2. Meta tags (charset, viewport, title, description, keywords)
+3. Favicons
+4. Google Fonts preconnect + stylesheet
+5. Vendor CSS (Bootstrap, Bootstrap Icons, GLightbox, Swiper)
+6. Main CSS
 
-**HTML Asset Order:**
-1. Google Analytics (in head)
-2. Preconnect for fonts
-3. Google Fonts stylesheet
-4. Vendor CSS (Bootstrap first, then icons, AOS, GLightbox, Swiper)
-5. Main CSS file
-6. Content
-7. Vendor JS (Bootstrap, validation, AOS, GLightbox, imagesloaded, isotope, Swiper, PureCounter)
-8. Main JS file
-9. External services (EmailJS)
-10. Inline scripts
+**HTML Footer Scripts Order:**
+1. Vendor JS (Bootstrap, Swiper, GLightbox, PureCounter)
+2. Main JS
 
-**Vendor Path:**
-- Use `assets/vendor copy/` (note space in directory name - legacy issue)
-- NOT `assets/vendor/` (unused duplicate)
+**CSS Import Order:**
+- Single file approach - all CSS in `assets/css/main.css`
+- Internal organization: Variables > Global > Header > Navigation > Footer > Components > Page-specific
 
 ## Error Handling
 
-**JavaScript Patterns:**
+**Patterns:**
 - Guard clauses for missing elements:
-```javascript
-if (!selectHeader) return;
-if (mobileNavToggleBtn) {
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
-}
-```
-- Try/catch for async operations:
-```javascript
-try {
-  const response = await fetch('https://api.web3forms.com/submit', {...});
-  // handle response
-} catch (error) {
-  console.error('Network error:', error);
-  showError('Network error. Please check your connection and try again.');
-}
-```
+  ```javascript
+  if (!selectHeader) return;
+  if (mobileNavToggleBtn) {
+    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  }
+  ```
+- Try/catch for async operations (form submission):
+  ```javascript
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {...});
+    // handle response
+  } catch (error) {
+    console.error('Network error:', error);
+    showError('Network error. Please check your connection and try again.');
+  }
+  ```
+- User-facing error messages via DOM insertion (not alerts)
 
-**Form Validation:**
-- Manual validation before submission
-- Email regex: `/^[^\s@]+@[^\s@]+\.[^\s@]+$/`
-- Visual error feedback via dynamically created DOM elements
+**Missing Error Handling:**
+- Some event listeners assume elements exist without null checks (scroll buttons)
+- No global error boundary or error logging service
 
 ## Logging
 
-**Framework:** console (native browser)
+**Framework:** Browser console only
 
 **Patterns:**
-- Error logging: `console.error('Form submission error:', result.message);`
-- Debug logging: `console.log('FAILED...', error);`
+- `console.error()` for caught errors:
+  ```javascript
+  console.error('Form submission error:', result.message);
+  console.error('Network error:', error);
+  ```
+- No `console.log()` debug statements in production code
 - No structured logging or log levels
-- No external logging service
 
 ## Comments
 
-**SCSS Comments:**
-- Section headers use block comments:
-```scss
-/*--------------------------------------------------------------
-# Section Name
---------------------------------------------------------------*/
-```
-- Inline comments for clarification: `/* For Chrome, Safari, and Edge */`
+**When to Comment:**
+- Section headers in CSS (block comments with dashes):
+  ```css
+  /*--------------------------------------------------------------
+  # Global Header
+  --------------------------------------------------------------*/
+  ```
+- JSDoc-style comments for utility functions:
+  ```javascript
+  /**
+   * Throttle utility - limits function execution to once per specified interval
+   * Used for performance optimization on scroll/resize handlers
+   */
+  ```
+- Inline comments for non-obvious behavior
 
-**JavaScript Comments:**
-- JSDoc-style block comments for function descriptions:
-```javascript
-/**
- * Apply .scrolled class to the body as the page is scrolled down
- */
-function toggleScrolled() {...}
-```
-- Single-line comments for inline notes: `// Set the scroll amount`
-- Commented-out code present (should be removed)
+**CSS Comment Style:**
+- Section dividers with `#` prefix: `# Font & Color Variables`, `# Global Footer`
+- Inline explanations in `/* comment */` format
 
-**HTML Comments:**
-- End-section markers: `<!-- /Hero Section -->`
-- Commented-out alternatives: `<!-- <a href="#">Home</a> -->`
+**JavaScript Comment Style:**
+- Block comments for function descriptions
+- Single-line `//` for inline explanations
+- Commented-out code present (should be removed):
+  ```javascript
+  // document.addEventListener('click', function(event) { ... });
+  ```
 
 ## Function Design
 
 **Size:**
-- Functions range from 3-50 lines (some too long)
-- Popup handling code is ~400 lines in single DOMContentLoaded listener (should be modularized)
+- Most functions under 30 lines
+- Exception: Form submission handler (~80 lines) - could be split
 
 **Parameters:**
-- Minimal parameters, heavy use of DOM queries within functions
-- Event objects passed through: `function(e)` or `function(event)`
+- Minimal parameters (most functions rely on closure scope or DOM queries)
+- Event handlers receive event object: `function(e)` or `function(event)`
 
 **Return Values:**
-- Early returns for guard clauses
-- No explicit return values for most functions (void/undefined)
+- No explicit returns for side-effect functions
+- Guard clause returns: `if (!selectHeader) return;`
 
 ## Module Design
 
 **Exports:**
-- Not applicable (no ES modules, no bundler)
-- All code in IIFE: `(function() { "use strict"; ... })();`
+- None - no ES modules, no CommonJS
+- All code in global scope or IIFE
 
-**File Structure:**
-- Single JS file (`assets/js/main.js`) contains all functionality
-- No code splitting or lazy loading of JS
-- SCSS properly modularized into partials
+**IIFE Pattern:**
+- Main code wrapped in IIFE with `"use strict"`:
+  ```javascript
+  (function() {
+    "use strict";
+    // code here
+  })();
+  ```
+- Additional DOMContentLoaded listeners outside IIFE (inconsistent)
 
-## CSS Specificity Practices
+**Global Dependencies:**
+- Vendor libraries assumed global: `GLightbox`, `PureCounter`
+- No explicit dependency declaration
 
-**Use CSS Variables:**
-```scss
-color: var(--default-color);
-background-color: var(--background-color);
-font-family: var(--heading-font);
-```
+## CSS Patterns
 
-**Theme Overrides via Classes:**
-```scss
-.dark-background {
-  --background-color: #060606;
-  --default-color: #ffffff;
-}
-```
+**Layout:**
+- Flexbox for navigation and card layouts
+- CSS Grid for form layouts and FAQ content reveal
+- Bootstrap grid for page structure (`col-xl-5`, `col-lg-4`)
 
-**Avoid `!important` except responsiveness:**
-```scss
-@media (max-width: 640px) {
-  padding: 390px 0 0px 0 !important;
-}
-```
+**Responsive Design:**
+- Mobile-first approach in some sections
+- Common breakpoints: 768px, 991.5px, 1100px, 1199px, 1200px, 1800px
+- Duplicate media queries at same breakpoints (consolidation opportunity)
 
-## Inline Styles
-
-**Current State:** Heavily used in HTML (anti-pattern)
-```html
-<h3 style="font-family: 'bree serif', sans-serif; font-weight: 500;">
-<div style="position: absolute; z-index: 2; top: -15px; right: -15px; padding: 12px; border-radius:50%; background-color: #ff5733; border: 3px solid white">
-```
-
-**Recommendation:** Move to CSS classes
-
-## Responsive Design
-
-**Breakpoints:**
-- 1200px: Desktop nav visible
-- 1199px: Mobile nav
-- 768px: Tablet adjustments
-- 640px: Mobile phone
-
-**Pattern:**
-```scss
-// Base styles (mobile-first NOT used - desktop-first)
-.component {
-  // Desktop styles
-}
-
-@media (max-width: 768px) {
-  .component {
-    // Tablet/mobile overrides
+**CSS Nesting:**
+- Modern CSS nesting used (not SCSS):
+  ```css
+  .footer {
+    .container { ... }
+    .footer-left {
+      .logo-text-footer { ... }
+    }
   }
-}
-```
+  ```
+
+**Vendor Prefix:**
+- None manually added (relies on browser support)
+
+**Units:**
+- Mix of: px, rem, %, vw, vh
+- Inconsistent margins: `1%`, `50px`, `90px`, `100px` across sections
+
+## HTML Patterns
+
+**Semantic Elements:**
+- `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`
+- Section IDs for navigation: `id="hero"`, `id="hero-contact"`
+
+**Class Usage:**
+- Multiple classes per element common: `class="hero section dark-background"`
+- Bootstrap utility classes: `d-flex`, `col-xl-5`, `align-items-center`
+
+**Data Attributes:**
+- Used for component configuration: `data-target="stats-1"`
+- Vendor data attributes: `data-bs-toggle` (Bootstrap)
+
+**Inline Styles:**
+- Present but discouraged: `style="font-family: 'bree serif', sans-serif; font-weight: 500;"`
+- Should be moved to CSS classes
+
+## Security Patterns
+
+**XSS Prevention:**
+- Safe DOM manipulation using `textContent` instead of `innerHTML`:
+  ```javascript
+  const text = document.createElement('span');
+  text.textContent = message;  // Safe: textContent escapes HTML
+  ```
+- One exception: Dynamic keyframe injection uses `innerHTML` (low risk - not user input)
+
+**External Resources:**
+- Google Fonts over HTTPS
+- Web3Forms API over HTTPS
+- CDN resources should have integrity hashes (missing)
 
 ---
 
-*Convention analysis: 2025-02-05*
+*Convention analysis: 2026-02-06*

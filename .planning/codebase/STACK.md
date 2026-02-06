@@ -1,128 +1,135 @@
 # Technology Stack
 
-**Analysis Date:** 2025-02-05
+**Analysis Date:** 2026-02-06
 
 ## Languages
 
 **Primary:**
-- HTML5 - All page content (`index.html`, `services.html`, `portfolio.html`, `contact.html`, `portfolio/*.html`)
-- CSS3 - Compiled from SCSS (`assets/css/main.css`)
-- JavaScript (ES6) - Vanilla JS (`assets/js/main.js`)
+- HTML5 - All page structure (`index.html`, `services.html`, `portfolio.html`, `contact.html`, `portfolio/*.html`)
+- CSS3 - All styling (`assets/css/main.css` - 3,430 lines)
+- JavaScript (ES6+) - All interactivity (`assets/js/main.js` - 507 lines)
 
 **Secondary:**
-- SCSS - CSS preprocessor source files (`assets/scss/`)
+- PHP - Form processing (`assets/vendor/php-email-form/php-email-form.php`) - NOT USED, site uses Web3Forms API instead
 
 ## Runtime
 
 **Environment:**
-- Browser-based (no server-side runtime)
-- Static file hosting
+- Browser-based execution (no server-side runtime)
+- Apache web server (production)
 
 **Package Manager:**
-- None - No npm, yarn, or package.json
-- Vendor libraries bundled directly in `assets/vendor copy/`
+- None - no package.json, no npm, no build tools
+- All dependencies are vendored or loaded via CDN
 
 ## Frameworks
 
 **Core:**
-- Bootstrap 5.3.3 - CSS framework and grid system (`assets/vendor copy/bootstrap/`)
+- Bootstrap 5 - CSS framework and component library
+  - Location: `assets/vendor/bootstrap/`
+  - Full distribution (CSS + JS bundle)
 
-**UI Libraries:**
-- Swiper 11.1.12 - Touch slider/carousel (`assets/vendor copy/swiper/`)
-- GLightbox - Image lightbox (`assets/vendor copy/glightbox/`)
-- AOS - Animate on scroll (CSS loaded but JS not initialized in main.js) (`assets/vendor copy/aos/`)
-- PureCounter 1.5.0 - Number counter animations (`assets/vendor copy/purecounter/`)
-- Bootstrap Icons - Icon library (`assets/vendor copy/bootstrap-icons/`)
+**Carousels/Sliders:**
+- Swiper - Touch slider library
+  - Location: `assets/vendor/swiper/`
+  - Version: bundled minified build
 
-**Unused (can be removed):**
-- Isotope Layout (`assets/vendor copy/isotope-layout/`) - Loaded but never used
-- ImagesLoaded (`assets/vendor copy/imagesloaded/`) - Loaded but never used
+**Lightbox:**
+- GLightbox - Image lightbox
+  - Location: `assets/vendor/glightbox/`
+  - Initialized in `assets/js/main.js` (line 160)
+
+**Animations:**
+- PureCounter - Number counter animations
+  - Location: `assets/vendor/purecounter/`
+  - Initialized in `assets/js/main.js` (line 34)
+
+**Build/Dev:**
+- None - static site with no build process
+- Serve with any static server
 
 ## Key Dependencies
 
-**Critical:**
-- Bootstrap 5.3.3 - Grid, utilities, responsive design
-- Swiper 11.1.12 - Portfolio carousels
-- GLightbox - Image popup viewing
+**Bundled (in `assets/vendor/`):**
+- Bootstrap 5 (CSS framework)
+- Bootstrap Icons (icon font)
+- Swiper (carousel/slider)
+- GLightbox (lightbox)
+- PureCounter (number animations)
+- php-email-form (form validation helper - not actively used)
 
-**Infrastructure:**
-- Google Fonts (Montserrat, Poppins, Bree Serif) - External CDN
-- Font Awesome - Icons in popup form (loaded via CDN in HTML)
+**CDN-loaded:**
+- EmailJS (@emailjs/browser@4) - Newsletter form
+  - CDN: `https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js`
+- Web3Forms client script
+  - CDN: `https://web3forms.com/client/script.js`
+- Google Fonts (Montserrat, Poppins, Bree Serif)
+  - CDN: `https://fonts.googleapis.com/css2?family=...`
 
 ## Configuration
 
 **Environment:**
-- No environment variables
-- No `.env` files
-- API keys hardcoded in HTML (Web3Forms access key, EmailJS public key, Google Analytics ID)
+- No environment variables required
+- All API keys are hardcoded in HTML (EmailJS, Web3Forms, Google Analytics)
+- Credentials in use:
+  - EmailJS public key: `xSt4A1yusGFKnSwVo`
+  - EmailJS service: `service_g99gf2a`
+  - EmailJS template: `template_fno3r68`
+  - Web3Forms access key: `d6b5486e-be40-4bae-a530-154b913012d2`
+  - Google Analytics: `G-Q33X4CQ5KZ`
 
 **Build:**
-- SCSS Compilation: VS Code "Easy Compile" extension
-  - Entry: `assets/scss/main.scss`
-  - Output: `assets/css/main.css`
-  - Comment directive: `// out: ../css/main.css`
+- No build configuration
+- CSS variables defined in `assets/css/main.css` (lines 8-32)
+- Three font families loaded: Bree Serif, Montserrat, Poppins
 
 **Server:**
-- Apache `.htaccess` configuration
-  - Removes `.html` extensions from URLs
-  - Custom 404 page routing
+- Apache configuration in `.htaccess`
+  - URL rewriting to remove `.html` extensions
+  - Custom 404 page (`/404.html`)
+
+## CSS Architecture
+
+**Variables (`:root` scope):**
+```css
+/* Fonts */
+--default-font: "Bree Serif", system-ui, ...
+--heading-font: "Montserrat", sans-serif
+--nav-font: "Poppins", sans-serif
+
+/* Colors */
+--background-color: #faf9f5
+--default-color: #212529
+--heading-color: #2d465e
+--accent-color: #ff5733
+--surface-color: #ffffff
+--contrast-color: #ffffff
+```
+
+**Theme Classes:**
+- `.light-background` - White background variant
+- `.dark-background` - Dark theme override
 
 ## Platform Requirements
 
 **Development:**
-- Any static file server
-- VS Code with Easy Compile extension for SCSS changes
-- No Node.js required
+- Any static file server (Python http.server, VS Code Live Server, etc.)
+- No Node.js or build tools required
 
 **Production:**
-- Apache web server (for `.htaccess` support)
-- Hosted at: https://whistlemanmedia.nl
+- Apache web server with mod_rewrite enabled
+- HTTPS (live at whistlemanmedia.nl)
 
-## File Sizes
+## File Size Summary
 
-| Asset | Size |
-|-------|------|
-| Images (`assets/img/`) | 219 MB |
-| Vendor active (`assets/vendor copy/`) | 10 MB |
-| Vendor duplicate (`assets/vendor/`) | 9.9 MB (DELETE) |
-| CSS (`assets/css/main.css`) | 3,430 lines |
-| JS (`assets/js/main.js`) | 480 lines |
+**Code Files:**
+- `assets/css/main.css`: ~3,430 lines
+- `assets/js/main.js`: ~507 lines
+- 11 HTML files (4 root + 7 portfolio case studies)
 
-## SCSS Structure
-
-```
-assets/scss/
-├── main.scss           # Entry point with imports
-├── _variables.scss     # CSS custom properties
-├── _sections.scss      # Section imports
-├── layouts/
-│   ├── _general.scss
-│   ├── _header.scss
-│   ├── _navmenu.scss
-│   ├── _footer.scss
-│   ├── _preloader.scss
-│   └── _page-titles.scss
-└── sections/           # Component styles
-```
-
-## CSS Custom Properties
-
-Defined in `assets/scss/_variables.scss`:
-
-```css
-:root {
-  --default-font: "Bree Serif", system-ui, ...;
-  --heading-font: "Montserrat", sans-serif;
-  --nav-font: "Poppins", sans-serif;
-  --background-color: #faf9f5;
-  --default-color: #212529;
-  --heading-color: #2d465e;
-  --accent-color: #ff5733;
-  --surface-color: #ffffff;
-  --contrast-color: #ffffff;
-}
-```
+**Vendor Dependencies:**
+- `assets/vendor/`: Contains Bootstrap, Swiper, GLightbox, PureCounter, Bootstrap Icons
 
 ---
 
-*Stack analysis: 2025-02-05*
+*Stack analysis: 2026-02-06*
