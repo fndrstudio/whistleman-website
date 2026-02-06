@@ -1532,6 +1532,16 @@ section,
   position: relative;
   border-radius: 20px;
   min-height: 500px;
+  /* Card Micro-interactions (Phase 6) */
+  transition: transform 0.3s ease-in-out,
+              box-shadow 0.3s ease-in-out;
+  will-change: transform;
+  cursor: pointer;
+}
+
+.cards .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .cards .card:before {
@@ -1541,6 +1551,12 @@ section,
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 25%, rgba(0, 0, 0, 0.5) 75%);
   z-index: 2;
   border-radius: 20px;
+  /* Enhanced overlay on hover (Phase 6) */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.cards .card:hover:before {
+  opacity: 0.8;
 }
 
 .cards .card .card-body {
@@ -1550,6 +1566,12 @@ section,
   right: 0;
   z-index: 3;
   padding: 30px;
+  /* Card body content lift effect (Phase 6) */
+  transition: transform 0.3s ease-in-out;
+}
+
+.cards .card:hover .card-body {
+  transform: translateY(-4px);
 }
 
 .cards .card .card-body h3 {
@@ -1849,6 +1871,14 @@ section,
   /* Vertically center content */
   color: #fff;
   /* White text for contrast */
+  /* Testimonial Card Micro-interactions (Phase 6) */
+  transition: transform 0.3s ease-in-out,
+              box-shadow 0.3s ease-in-out;
+}
+
+.cards-2 .testimonial-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* @media (min-width: 768px) {
@@ -2313,6 +2343,15 @@ section,
   min-height: 350px;
   width: 120%;
   overflow-y: visible;
+  /* Portfolio Card Micro-interactions (Phase 6) */
+  transition: transform 0.3s ease-in-out,
+              box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.cards-portfolio .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .cards-portfolio .card:before {
@@ -3552,6 +3591,30 @@ section,
   .submit-btn:active,
   .show-form-btn:hover,
   .show-form-btn:active {
+    transform: none;
+  }
+}
+
+/* Reduced Motion: Card Interactions */
+@media (prefers-reduced-motion: reduce) {
+  .cards .card,
+  .cards-2 .testimonial-item,
+  .cards-portfolio .card {
+    transition: box-shadow 0.2s ease-in-out;
+  }
+
+  .cards .card:hover,
+  .cards-2 .testimonial-item:hover,
+  .cards-portfolio .card:hover {
+    transform: translateY(-2px); /* Subtle lift only per user decision */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .cards .card .card-body {
+    transition: none;
+  }
+
+  .cards .card:hover .card-body {
     transform: none;
   }
 }
