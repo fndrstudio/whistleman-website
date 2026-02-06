@@ -213,4 +213,122 @@
     }
   }
 
+  // ==========================================================================
+  // Section Reveal Animations
+  // ==========================================================================
+  // Per user decision: fade + slide up, cascade stagger (50-100ms), play once
+  // Animation trigger: 80% visible (Claude's discretion default)
+
+  // Sections to animate - exclude hero (has its own entrance)
+  const sections = document.querySelectorAll('section:not(.hero):not(#hero)');
+
+  sections.forEach(section => {
+    // Determine if this is a case study page (simplified animations per user decision)
+    const isCaseStudy = document.body.classList.contains('portfolio-details-page') ||
+                        window.location.pathname.includes('/portfolio/');
+
+    // Find animatable children within the section
+    // Cards, list items, columns, content blocks
+    const animatableChildren = section.querySelectorAll(
+      '.card, .col-lg-4, .col-lg-6, .col-md-6, .testimonial-item, ' +
+      '.faq-item, .service-item, .team-member, .stat-item, ' +
+      '.info-item, .contact-item, li, article'
+    );
+
+    // Determine animation parameters based on section/page context
+    const slideDistance = prefersReducedMotion ? 0 : (isCaseStudy ? 0 : 50);
+    const duration = prefersReducedMotion ? 0.1 : (isCaseStudy ? 0.2 : 0.35);
+    const staggerAmount = prefersReducedMotion ? 0 : (isCaseStudy ? 0 : 0.08);
+
+    // Determine trigger point based on section height (Claude's discretion)
+    const sectionHeight = section.offsetHeight;
+    let triggerPoint = '80%'; // Default
+    if (sectionHeight < 300) {
+      triggerPoint = '90%'; // Small sections - trigger earlier
+    } else if (sectionHeight > 800) {
+      triggerPoint = '70%'; // Large sections - trigger later
+    }
+
+    if (animatableChildren.length > 0 && animatableChildren.length <= 20) {
+      // Stagger children
+      gsap.set(animatableChildren, {
+        autoAlpha: 0,
+        y: slideDistance
+      });
+
+      gsap.to(animatableChildren, {
+        autoAlpha: 1,
+        y: 0,
+        duration: duration,
+        ease: window.WMAnimations.config.ease,
+        stagger: {
+          amount: staggerAmount,
+          from: 'start'
+        },
+        scrollTrigger: {
+          trigger: section,
+          start: `top ${triggerPoint}`,
+          toggleActions: 'play none none none',
+          once: true // Play once only - per user decision
+        }
+      });
+    } else {
+      // No suitable children or too many - animate section itself
+      gsap.set(section, {
+        autoAlpha: 0,
+        y: slideDistance
+      });
+
+      gsap.to(section, {
+        autoAlpha: 1,
+        y: 0,
+        duration: duration,
+        ease: window.WMAnimations.config.ease,
+        scrollTrigger: {
+          trigger: section,
+          start: `top ${triggerPoint}`,
+          toggleActions: 'play none none none',
+          once: true
+        }
+      });
+    }
+  });
+
+  // ==========================================================================
+  // Card Grid Specific Animations
+  // ==========================================================================
+  // Portfolio cards in horizontal scroll containers
+  const cardContainers = document.querySelectorAll('.cards .row, .cards-portfolio .row');
+
+  cardContainers.forEach(container => {
+    const cards = container.querySelectorAll('.card, .col-lg-4');
+
+    if (cards.length > 0) {
+      const slideDistance = prefersReducedMotion ? 0 : 50;
+      const duration = prefersReducedMotion ? 0.1 : 0.4;
+
+      gsap.set(cards, {
+        autoAlpha: 0,
+        y: slideDistance
+      });
+
+      gsap.to(cards, {
+        autoAlpha: 1,
+        y: 0,
+        duration: duration,
+        ease: window.WMAnimations.config.ease,
+        stagger: {
+          amount: prefersReducedMotion ? 0 : 0.1, // 100ms total across cards
+          from: 'start'
+        },
+        scrollTrigger: {
+          trigger: container,
+          start: 'top 75%',
+          toggleActions: 'play none none none',
+          once: true
+        }
+      });
+    }
+  });
+
 })();
