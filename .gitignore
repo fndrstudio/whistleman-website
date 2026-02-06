@@ -1,0 +1,17 @@
+# Development & Planning
+.planning/
+.claude/
+CLAUDE.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Environment
+.env
+.env.local
