@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-05)
 
 **Core value:** A professional portfolio that loads fast, looks polished, and converts visitors to clients
-**Current focus:** Phase 6 in progress (Animation & Polish) - Plan 01 complete
+**Current focus:** Phase 6 in progress (Animation & Polish) - Plan 02 complete
 
 ## Current Position
 
 Phase: 6 of 7 (Animation & Polish)
-Plan: 1/3 complete
+Plan: 2/3 complete
 Status: In progress
-Last activity: 2026-02-06 - Completed 06-01-PLAN.md (Animation Foundation)
+Last activity: 2026-02-06 - Completed 06-02-PLAN.md (Hero + Section Animations)
 
-Progress: ████████░░ 89%
+Progress: █████████░ 93%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
-- Average duration: 10 min
-- Total execution time: 1.47 hours
+- Total plans completed: 9
+- Average duration: 9 min
+- Total execution time: 1.5 hours
 
 **By Phase:**
 
@@ -32,11 +32,11 @@ Progress: ████████░░ 89%
 | 03-visual-bug-fixes | 1 | 25 min | 25 min |
 | 04-code-quality | 2 | 10 min | 5 min |
 | 05-seo-implementation | 2 | 20 min | 10 min |
-| 06-animation-polish | 1 | 8 min | 8 min |
+| 06-animation-polish | 2 | 10 min | 5 min |
 
 **Recent Trend:**
-- Last 3 plans: 4min, 16min, 8min
-- Trend: Animation foundation fast - straightforward CDN integration and JS creation
+- Last 3 plans: 16min, 8min, 2min
+- Trend: Animation plans very fast - building on existing GSAP foundation
 
 ## Accumulated Context
 
@@ -72,6 +72,10 @@ Recent decisions affecting current work:
 | scrollRestoration manual | 06-01 | Always start at top per user decision |
 | scaleX for progress bar | 06-01 | GPU accelerated, better performance than width |
 | WMAnimations global | 06-01 | Exposes config for Plan 02 section animations |
+| autoAlpha for FOUC prevention | 06-02 | visibility + opacity prevents flash of unstyled content |
+| Hero sequence overlapping timing | 06-02 | -=0.3, -=0.2 creates fluid entrance without waiting |
+| Section trigger by height | 06-02 | 90% for small, 80% default, 70% for large sections |
+| Case study simplified animations | 06-02 | Fade only, no slide/stagger for cleaner reading |
 
 ### Pending Todos
 
@@ -86,7 +90,7 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-06
-Stopped at: Completed 06-01-PLAN.md (Animation Foundation)
+Stopped at: Completed 06-02-PLAN.md (Hero + Section Animations)
 Resume file: None
 
-Next action: Plan 06-02 (Section Animations) - fade-slide animations for hero, cards, case studies
+Next action: Plan 06-03 (Micro-interactions) - button hovers, link underlines, interactive feedback
