@@ -34,10 +34,10 @@ Requirements for initial optimization. Each maps to roadmap phases.
 
 ### SEO
 
-- [ ] **SEO-01**: Add Open Graph and Twitter Card meta tags
-- [ ] **SEO-02**: Create robots.txt and sitemap.xml
-- [ ] **SEO-03**: Add JSON-LD structured data
-- [ ] **SEO-04**: Fill in all image alt texts
+- [x] **SEO-01**: Add Open Graph and Twitter Card meta tags
+- [x] **SEO-02**: Create robots.txt and sitemap.xml
+- [x] **SEO-03**: Add JSON-LD structured data
+- [x] **SEO-04**: Fill in all image alt texts
 
 ### Animation
 
@@ -95,10 +95,10 @@ Which phases cover which requirements. Updated by create-roadmap.
 | CODE-02 | Phase 4 | Complete |
 | CODE-03 | Phase 4 | Complete |
 | CODE-04 | Phase 4 | Complete |
-| SEO-01 | Phase 5 | Pending |
-| SEO-02 | Phase 5 | Pending |
-| SEO-03 | Phase 5 | Pending |
-| SEO-04 | Phase 5 | Pending |
+| SEO-01 | Phase 5 | Complete |
+| SEO-02 | Phase 5 | Complete |
+| SEO-03 | Phase 5 | Complete |
+| SEO-04 | Phase 5 | Complete |
 | ANIM-01 | Phase 6 | Pending |
 | ANIM-02 | Phase 6 | Pending |
 | ANIM-03 | Phase 6 | Pending |
@@ -114,4 +114,4 @@ Which phases cover which requirements. Updated by create-roadmap.
 
 ---
 *Requirements defined: 2026-02-05*
-*Last updated: 2026-02-05 after roadmap creation*
+*Last updated: 2026-02-06 after Phase 5 completion*
