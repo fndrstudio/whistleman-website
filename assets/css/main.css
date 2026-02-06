@@ -54,6 +54,19 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
+/* Touch optimization for interactive elements (Phase 7) */
+html {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Touch-action for all interactive elements */
+a, button, input, textarea, select,
+.bloc-icon, .card, .btn-get-started, .btn-footer,
+.contact-btn-header, [role="button"] {
+  touch-action: manipulation;
+}
+
 body {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -223,7 +236,7 @@ header .logo {
 }
 
 .contact-btn-header:active {
-  transform: translateY(1px);
+  transform: translateY(1px) scale(0.98);
   box-shadow: 0 2px 6px rgba(255, 87, 51, 0.15);
 }
 
@@ -1187,8 +1200,8 @@ section,
 }
 
 .hero .btn-get-started:active {
-  /* Press down effect */
-  transform: translateY(1px);
+  /* Press down effect with scale (Phase 7 touch optimization) */
+  transform: translateY(1px) scale(0.98);
   box-shadow: 0 2px 8px rgba(255, 87, 51, 0.2);
 }
 
@@ -3730,7 +3743,7 @@ section,
 }
 
 .btn-footer:active {
-  transform: translateY(1px);
+  transform: translateY(1px) scale(0.98);
   box-shadow: 0 2px 8px rgba(255, 87, 51, 0.2);
 }
 
