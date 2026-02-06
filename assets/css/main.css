@@ -3866,3 +3866,65 @@ section,
     width: 100%; /* Instant, no animation */
   }
 }
+
+/* Mobile contact form - single column layout (Phase 7) */
+@media (max-width: 767px) {
+  #hero-contact .php-email-form .row {
+    flex-direction: column;
+  }
+
+  #hero-contact .php-email-form [class*="col-"] {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #hero-contact .php-email-form {
+    padding: 16px;
+  }
+
+  #hero-contact .php-email-form input,
+  #hero-contact .php-email-form textarea {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+    padding: 14px 16px;
+  }
+
+  #hero-contact .contact-subtitles {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  /* Better spacing between fields */
+  #hero-contact .php-email-form .gy-4 > * {
+    margin-bottom: 16px;
+  }
+
+  /* Full-width submit button */
+  #hero-contact .php-email-form button[type="submit"] {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  /* Apply same fixes to contact page form if present */
+  .contact .php-email-form .row {
+    flex-direction: column;
+  }
+
+  .contact .php-email-form [class*="col-"] {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .contact .php-email-form input,
+  .contact .php-email-form textarea {
+    font-size: 16px;
+  }
+
+  .contact .php-email-form button[type="submit"] {
+    width: 100%;
+  }
+}
