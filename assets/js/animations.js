@@ -228,9 +228,10 @@
                         window.location.pathname.includes('/portfolio/');
 
     // Find animatable children within the section
-    // Cards, list items, columns, content blocks
+    // Note: Exclude .card and .testimonial-item - they have CSS hover transforms
+    // that would be overridden by GSAP inline styles
     const animatableChildren = section.querySelectorAll(
-      '.card, .col-lg-4, .col-lg-6, .col-md-6, .testimonial-item, ' +
+      '.col-lg-4, .col-lg-6, .col-md-6, ' +
       '.faq-item, .service-item, .team-member, .stat-item, ' +
       '.info-item, .contact-item, li, article'
     );
@@ -298,10 +299,12 @@
   // Card Grid Specific Animations
   // ==========================================================================
   // Portfolio cards in horizontal scroll containers
+  // Note: Only animate column wrappers, not .card directly -
+  // cards have CSS hover transforms that would be overridden by GSAP
   const cardContainers = document.querySelectorAll('.cards .row, .cards-portfolio .row');
 
   cardContainers.forEach(container => {
-    const cards = container.querySelectorAll('.card, .col-lg-4');
+    const cards = container.querySelectorAll('.col-lg-4, .col-md-6');
 
     if (cards.length > 0) {
       const slideDistance = prefersReducedMotion ? 0 : 50;
