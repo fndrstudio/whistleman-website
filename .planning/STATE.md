@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-05)
 
 **Core value:** A professional portfolio that loads fast, looks polished, and converts visitors to clients
-**Current focus:** Phase 5 complete (SEO Implementation), ready for Phase 6 (Animation & Polish)
+**Current focus:** Phase 6 in progress (Animation & Polish) - Plan 01 complete
 
 ## Current Position
 
-Phase: 5 of 7 (SEO Implementation)
-Plan: 2/2 complete
-Status: Phase complete
-Last activity: 2026-02-06 - Completed 05-02-PLAN.md (Structured Data & Image Alt Text)
+Phase: 6 of 7 (Animation & Polish)
+Plan: 1/3 complete
+Status: In progress
+Last activity: 2026-02-06 - Completed 06-01-PLAN.md (Animation Foundation)
 
-Progress: ███████░░░ 88%
+Progress: ████████░░ 89%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
-- Average duration: 11 min
-- Total execution time: 1.33 hours
+- Total plans completed: 8
+- Average duration: 10 min
+- Total execution time: 1.47 hours
 
 **By Phase:**
 
@@ -32,10 +32,11 @@ Progress: ███████░░░ 88%
 | 03-visual-bug-fixes | 1 | 25 min | 25 min |
 | 04-code-quality | 2 | 10 min | 5 min |
 | 05-seo-implementation | 2 | 20 min | 10 min |
+| 06-animation-polish | 1 | 8 min | 8 min |
 
 **Recent Trend:**
-- Last 3 plans: 2min, 4min, 16min
-- Trend: Structured data + alt text took longer - systematic updates across 11 HTML files
+- Last 3 plans: 4min, 16min, 8min
+- Trend: Animation foundation fast - straightforward CDN integration and JS creation
 
 ## Accumulated Context
 
@@ -66,6 +67,11 @@ Recent decisions affecting current work:
 | Article schema for case studies | 05-02 | More specific than CreativeWork - better Google Rich Results support |
 | role=presentation for decorative images | 05-02 | Explicitly marks nav icons as decorative - prevents redundant screen reader announcements |
 | Natural language alt text (80-125 chars) | 05-02 | Better for accessibility and SEO than keyword stuffing |
+| Lenis desktop-only | 06-01 | isMobile regex + isTouch check - mobile uses native scroll |
+| Duration 1.2s for Lenis | 06-01 | Short coast momentum feel per user decision |
+| scrollRestoration manual | 06-01 | Always start at top per user decision |
+| scaleX for progress bar | 06-01 | GPU accelerated, better performance than width |
+| WMAnimations global | 06-01 | Exposes config for Plan 02 section animations |
 
 ### Pending Todos
 
@@ -80,7 +86,7 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-06
-Stopped at: Completed 05-02-PLAN.md (Structured Data & Image Alt Text) - Phase 5 complete
+Stopped at: Completed 06-01-PLAN.md (Animation Foundation)
 Resume file: None
 
-Next action: Phase 6 (Polish & Animations) - Lenis smooth scrolling + GSAP animations
+Next action: Plan 06-02 (Section Animations) - fade-slide animations for hero, cards, case studies
