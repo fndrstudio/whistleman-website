@@ -29,7 +29,7 @@ Transform a bloated 239MB portfolio site into a fast, polished, SEO-optimized sh
   2. Total site size reduced by ~10MB (duplicate vendor deleted)
   3. All HTML files reference `assets/vendor/` (not `vendor copy`)
 **Research**: Unlikely (internal file operations)
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
 - [x] 01-01: Delete duplicate vendor, rename folder, update paths
@@ -43,7 +43,7 @@ Plans:
   2. Below-fold images load lazily (visible in network tab)
   3. Total image size under 30MB (from 196MB)
 **Research**: Unlikely (standard optimization patterns)
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
 - [x] 02-01: Convert images to WebP and add lazy loading
@@ -57,7 +57,7 @@ Plans:
   2. Images in fixed-size containers don't stretch or crop awkwardly
   3. Left margins are consistent across all sections
 **Research**: Unlikely (CSS fixes)
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
 - [x] 03-01: Fix CSS overflow, object-position, and margin consistency
@@ -72,7 +72,7 @@ Plans:
   3. No XSS vulnerabilities (innerHTML replaced)
   4. Google Fonts load without render blocking
 **Research**: Unlikely (established JS patterns)
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
 - [x] 04-01: Fix memory leaks and add throttle/debounce
@@ -87,13 +87,12 @@ Plans:
   2. robots.txt and sitemap.xml exist and are valid
   3. JSON-LD validates in Google's testing tool
   4. All images have descriptive alt texts
-**Research**: Likely (JSON-LD structured data patterns)
-**Research topics**: Schema.org LocalBusiness/Organization markup, OG image best practices
-**Plans**: TBD
+**Research**: Complete (05-RESEARCH.md)
+**Plans**: 2 plans
 
 Plans:
-- [ ] 05-01: Add OG/Twitter meta tags and create sitemap
-- [ ] 05-02: Implement JSON-LD and fill alt texts
+- [ ] 05-01-PLAN.md — Add OG/Twitter meta tags to all pages, create robots.txt and sitemap.xml
+- [ ] 05-02-PLAN.md — Add JSON-LD structured data and fill all image alt texts
 
 ### Phase 6: Animation & Polish
 **Goal**: Smooth, professional animations throughout
@@ -139,7 +138,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | 2. Image Optimization | 1/1 | Complete | 2026-02-05 |
 | 3. Visual Bug Fixes | 1/1 | Complete | 2026-02-05 |
 | 4. Code Quality | 2/2 | Complete | 2026-02-05 |
-| 5. SEO Implementation | 0/2 | Not started | - |
+| 5. SEO Implementation | 0/2 | Planned | - |
 | 6. Animation & Polish | 0/3 | Not started | - |
 | 7. UX Enhancements | 0/2 | Not started | - |
 
