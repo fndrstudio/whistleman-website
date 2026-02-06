@@ -16,7 +16,7 @@ Transform a bloated 239MB portfolio site into a fast, polished, SEO-optimized sh
 - [x] **Phase 4: Code Quality** — Memory leaks, throttle/debounce, XSS, fonts
 - [x] **Phase 5: SEO Implementation** — OG/Twitter cards, sitemap, JSON-LD, alt texts
 - [x] **Phase 6: Animation & Polish** — Lenis scrolling, GSAP animations, micro-interactions
-- [ ] **Phase 7: UX Enhancements** — Mobile nav, CTA visibility, team section
+- [ ] **Phase 7: UX Enhancements** — Mobile bottom nav, CTA shimmer, touch interactions, form fixes
 
 ## Phase Details
 
@@ -112,19 +112,20 @@ Plans:
 - [x] 06-03-PLAN.md — Add button/card/nav micro-interactions (CSS), human verification
 
 ### Phase 7: UX Enhancements
-**Goal**: Better user experience, especially mobile
+**Goal**: Better mobile UX with app-style navigation and enhanced CTA visibility
 **Depends on**: Phase 6
 **Requirements**: UX-01, UX-02, UX-03
 **Success Criteria** (what must be TRUE):
-  1. Mobile navigation is easy to use and accessible
-  2. CTAs stand out visually and invite clicks
-  3. About/team information is accessible (if added)
-**Research**: Unlikely (internal UX patterns)
-**Plans**: TBD
+  1. Mobile navigation is easy to use and accessible (bottom nav bar)
+  2. CTAs stand out visually and invite clicks (shimmer animation)
+  3. Touch interactions feel immediate (no 300ms delay)
+  4. Mobile contact form displays properly (single column)
+**Research**: Complete (07-RESEARCH.md)
+**Plans**: 2 plans
 
 Plans:
-- [ ] 07-01: Improve mobile nav and CTA visibility
-- [ ] 07-02: Add team/about section (optional)
+- [ ] 07-01-PLAN.md — Mobile bottom navigation bar with floating style, context-aware hiding, distinct contact button
+- [ ] 07-02-PLAN.md — CTA shimmer animation, touch interaction improvements, mobile contact form fix
 
 ## Progress
 
