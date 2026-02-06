@@ -85,6 +85,18 @@ h6 {
   font-family: var(--heading-font);
 }
 
+/* Text Selection */
+::selection {
+  background: #ff5733;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+}
+
+::-moz-selection {
+  background: #ff5733;
+  color: #ffffff;
+}
+
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
@@ -251,40 +263,99 @@ header .logo {
     display: none;
   }
 
+  body {
+    padding-bottom: 88px;
+  }
+
   .mobile-nav {
-      background: #14181C;
-      border: solid 1px #fff;
-      position: fixed;
-      bottom: 10px;
-      left: 5%;
-      height: 55px;
-      width: 90%;
-      border-radius: 50px;
-      display: flex;
-      justify-content: space-around;
-      z-index: 996;
-    }
+    position: fixed;
+    bottom: max(16px, env(safe-area-inset-bottom));
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: 420px;
+    height: 64px;
+    background: #14181C;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 32px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35),
+                0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 8px 16px;
+    z-index: 996;
+    gap: 4px;
+  }
 
-    .bloc-icon {
-      display: flex;
-      align-items: center; 
-      gap: 8px; 
-      text-decoration: none;
-      color: inherit;
-    }
+  .mobile-nav .bloc-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    min-height: 48px;
+    padding: 8px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: background-color 0.2s ease, transform 0.1s ease-out;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
 
-    .bloc-icon img {
-      height: 17px;
-    }
+  .mobile-nav .bloc-icon:active {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(0.95);
+  }
 
-    .bloc-icon p {
-      position: relative;
-      margin: 0; 
-      font-size: 13px; 
-      white-space: nowrap; 
-      color: #fff;
-      font-family: 'Bree Serif';
-    }
+  .mobile-nav .bloc-icon i {
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+
+  .mobile-nav .bloc-icon span {
+    font-size: 11px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+  }
+
+  .mobile-nav .mobile-nav-cta {
+    background: var(--accent-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-left: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 48px;
+    justify-content: center;
+  }
+
+  .mobile-nav .mobile-nav-cta:active {
+    background: color-mix(in srgb, var(--accent-color), black 10%);
+    transform: scale(0.95);
+  }
+
+  .mobile-nav .mobile-nav-cta i {
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+
+  .mobile-nav .mobile-nav-cta span {
+    font-size: 11px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+  }
+
+  /* Context-aware hiding - hide current page link */
+  .mobile-nav[data-current-page="home"] [data-nav="home"],
+  .mobile-nav[data-current-page="services"] [data-nav="services"],
+  .mobile-nav[data-current-page="portfolio"] [data-nav="portfolio"],
+  .mobile-nav[data-current-page="contact"] [data-nav="contact"] {
+    display: none;
+  }
   }
 
 .header .logo {
@@ -1033,6 +1104,15 @@ section,
     border: none;
     box-shadow: none;
   }
+
+  /* Hide mobile nav on tablet and desktop */
+  .mobile-nav {
+    display: none;
+  }
+
+  body {
+    padding-bottom: 0;
+  }
 }
 
 
@@ -1362,10 +1442,6 @@ section,
 
 .faq .faq-container .faq-item .faq-toggle:hover {
   color: var(--accent-color);
-}
-
-.faq .faq-container .faq-active h3 {
-  /* color: var(--accent-color); */
 }
 
 .faq .faq-container .faq-active .faq-content {
@@ -2192,10 +2268,6 @@ section,
 
 .faq-2 .faq-container .faq-item .faq-toggle:hover {
   color: var(--accent-color);
-}
-
-.faq-2 .faq-container .faq-active h3 {
-  /* color: var(--accent-color); */
 }
 
 .faq-2 .faq-container .faq-active .faq-content {
@@ -3366,10 +3438,6 @@ section,
         opacity: 1;
         transform: translateY(0) scale(1) rotate(0);
     } */
-}
-
-.balloon-entrance {
-    /* animation: balloonEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; */
 }
 
 /* Exit animation */
