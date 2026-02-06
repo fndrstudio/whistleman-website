@@ -133,4 +133,84 @@
     }
   };
 
+  // ==========================================================================
+  // Hero Entrance Sequence
+  // ==========================================================================
+  // Per user decision: dramatic sequence - title, subtitle, CTA animate in sequence
+  // Only on pages with .hero section
+
+  const heroSection = document.querySelector('.hero');
+
+  if (heroSection) {
+    const heroTitle = heroSection.querySelector('h1');
+    const heroSubtitle = heroSection.querySelector('blockquote, .subtitle, p');
+    const heroCTA = heroSection.querySelector('.btn-get-started, .d-flex, .cta-buttons');
+    const heroBackground = heroSection.querySelector('img');
+
+    // Set initial states to prevent FOUC (use fromTo pattern per research)
+    if (!prefersReducedMotion) {
+      if (heroTitle) gsap.set(heroTitle, { autoAlpha: 0, y: 50 });
+      if (heroSubtitle) gsap.set(heroSubtitle, { autoAlpha: 0, y: 30 });
+      if (heroCTA) gsap.set(heroCTA, { autoAlpha: 0, y: 20 });
+    }
+
+    // Create entrance timeline
+    const heroTl = gsap.timeline({
+      delay: 0.3, // Small delay for page to settle
+      defaults: {
+        ease: window.WMAnimations.config.ease,
+        duration: prefersReducedMotion ? 0.1 : 0.5
+      }
+    });
+
+    if (prefersReducedMotion) {
+      // Reduced motion: instant fade, no movement
+      if (heroTitle) heroTl.to(heroTitle, { autoAlpha: 1, duration: 0.1 });
+      if (heroSubtitle) heroTl.to(heroSubtitle, { autoAlpha: 1, duration: 0.1 }, '-=0.05');
+      if (heroCTA) heroTl.to(heroCTA, { autoAlpha: 1, duration: 0.1 }, '-=0.05');
+    } else {
+      // Full animation: fade + slide sequence
+      if (heroTitle) {
+        heroTl.to(heroTitle, {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.6
+        });
+      }
+      if (heroSubtitle) {
+        heroTl.to(heroSubtitle, {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.5
+        }, '-=0.3'); // Overlap with previous
+      }
+      if (heroCTA) {
+        heroTl.to(heroCTA, {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.4
+        }, '-=0.2');
+      }
+    }
+
+    // ==========================================================================
+    // Hero Parallax Background
+    // ==========================================================================
+    // Per user decision: hero background moves slower than content
+    // Only apply parallax on desktop and when not reduced motion
+
+    if (heroBackground && !isMobile && !isTouch && !prefersReducedMotion) {
+      gsap.to(heroBackground, {
+        yPercent: -20, // Background moves 20% relative to scroll
+        ease: 'none',
+        scrollTrigger: {
+          trigger: heroSection,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 0.5 // Smooth scrub with slight delay
+        }
+      });
+    }
+  }
+
 })();
