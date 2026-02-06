@@ -2405,8 +2405,8 @@ section,
 }
 
 .cards-portfolio .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px) !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2) !important;
 }
 
 .cards-portfolio .card:before {
@@ -2621,10 +2621,18 @@ section,
       background: var(--accent-color);
       border: 0;
       padding: 10px 30px;
-      transition: 0.4s;
+      transition: transform 0.3s ease-in-out,
+                  box-shadow 0.3s ease-in-out,
+                  background-color 0.3s ease-in-out;
       border-radius: 50px;
       &:hover {
         background: color-mix(in srgb, var(--accent-color), transparent 20%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 87, 51, 0.25);
+      }
+      &:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 6px rgba(255, 87, 51, 0.15);
       }
     }
   
@@ -3665,7 +3673,8 @@ section,
   .submit-btn,
   .show-form-btn,
   .btn-footer,
-  .final-download-btn {
+  .final-download-btn,
+  .php-email-form button[type="submit"] {
     transition: background-color 0.2s ease-in-out,
                 box-shadow 0.2s ease-in-out;
   }
@@ -3683,7 +3692,9 @@ section,
   .btn-footer:hover,
   .btn-footer:active,
   .final-download-btn:hover,
-  .final-download-btn:active {
+  .final-download-btn:active,
+  .php-email-form button[type="submit"]:hover,
+  .php-email-form button[type="submit"]:active {
     transform: none;
   }
 }
