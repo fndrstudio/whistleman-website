@@ -41,10 +41,10 @@ Requirements for initial optimization. Each maps to roadmap phases.
 
 ### Animation
 
-- [ ] **ANIM-01**: Add Lenis for smooth scrolling
-- [ ] **ANIM-02**: Add GSAP + ScrollTrigger for animations
-- [ ] **ANIM-03**: Implement scroll-triggered section animations
-- [ ] **ANIM-04**: Add micro-interactions to buttons
+- [x] **ANIM-01**: Add Lenis for smooth scrolling
+- [x] **ANIM-02**: Add GSAP + ScrollTrigger for animations
+- [x] **ANIM-03**: Implement scroll-triggered section animations
+- [x] **ANIM-04**: Add micro-interactions to buttons
 
 ### UX
 
@@ -99,10 +99,10 @@ Which phases cover which requirements. Updated by create-roadmap.
 | SEO-02 | Phase 5 | Complete |
 | SEO-03 | Phase 5 | Complete |
 | SEO-04 | Phase 5 | Complete |
-| ANIM-01 | Phase 6 | Pending |
-| ANIM-02 | Phase 6 | Pending |
-| ANIM-03 | Phase 6 | Pending |
-| ANIM-04 | Phase 6 | Pending |
+| ANIM-01 | Phase 6 | Complete |
+| ANIM-02 | Phase 6 | Complete |
+| ANIM-03 | Phase 6 | Complete |
+| ANIM-04 | Phase 6 | Complete |
 | UX-01 | Phase 7 | Pending |
 | UX-02 | Phase 7 | Pending |
 | UX-03 | Phase 7 | Pending |
@@ -114,4 +114,4 @@ Which phases cover which requirements. Updated by create-roadmap.
 
 ---
 *Requirements defined: 2026-02-05*
-*Last updated: 2026-02-06 after Phase 5 completion*
+*Last updated: 2026-02-06 after Phase 6 completion*
