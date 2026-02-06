@@ -159,6 +159,12 @@ header .logo {
   position: relative; /* Required for pseudo-element positioning */
 }
 
+/* Desktop Nav Micro-interactions (Phase 6) */
+/* Subtle underline slide effect - complements existing color change */
+.desktop-nav a {
+  transition: color 0.3s ease-in-out;
+}
+
 .desktop-nav a::after {
   content: "";
   position: absolute;
@@ -166,14 +172,13 @@ header .logo {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #fff; /* Matches the text color */
-  transition: width 0.5s ease; /* Smooth animation */
+  background-color: var(--accent-color); /* Accent color underline */
+  transition: width 0.3s ease-in-out; /* Smooth slide animation */
 }
 
-/* .desktop-nav a:hover::after {
-  width: 80%; 
-  left: 10%;
-} */
+.desktop-nav a:hover::after {
+  width: 100%;
+}
 
 
 .desktop-nav .contact-btn-header {
@@ -214,6 +219,16 @@ header .logo {
 
 .mobile-nav {
   display: none;
+}
+
+/* Mobile nav - simpler effect (just color, no underline) (Phase 6) */
+.mobile-nav a {
+  transition: color 0.3s ease-in-out,
+              background-color 0.3s ease-in-out;
+}
+
+.mobile-nav a:hover {
+  color: var(--accent-color);
 }
 
 .mobile-logo {
@@ -3616,5 +3631,16 @@ section,
 
   .cards .card:hover .card-body {
     transform: none;
+  }
+}
+
+/* Reduced Motion: Nav Interactions */
+@media (prefers-reduced-motion: reduce) {
+  .desktop-nav a::after {
+    transition: none;
+  }
+
+  .desktop-nav a:hover::after {
+    width: 100%; /* Instant, no animation */
   }
 }
