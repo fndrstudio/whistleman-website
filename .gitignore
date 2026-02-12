@@ -15,3 +15,10 @@ Thumbs.db
 # Environment
 .env
 .env.local
+
+# Source documents
+*.docx
+*.doc
+
+# Root-level temp images
+/JoepvanOs.jpeg

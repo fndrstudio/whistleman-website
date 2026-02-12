@@ -2033,186 +2033,136 @@ section,
 
 .cards-2 .testimonial-item {
   background-color: var(--accent-color);
-  /* Dark background for cards */
   border-radius: 20px;
-  width: 49%;
-  /* Rounded corners */
-  padding: 40px 20px 40px 30px;
-  /* Spacing inside the card */
-  margin-right: 20px;
+  width: 32%;
+  padding: 32px;
+  margin-right: 16px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  /* Vertically center content */
+  text-align: center;
   color: #fff;
-  /* White text for contrast */
-  /* Testimonial Card Micro-interactions (Phase 6) */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out,
     box-shadow 0.3s ease-in-out;
 }
 
 .cards-2 .testimonial-item:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
-
-/* @media (min-width: 768px) {
-  .cards-2 .testimonial-item {
-    width: 43%;
-  }
-} */
 
 .cards-2 .testimonial-item:last-child {
   margin-right: 0;
-  /* Remove margin for the last card */
 }
 
 .cards-2 .testimonial-item img {
-  width: 150px;
-  /* Fixed width for image */
-  height: 150px;
-  /* Fixed height for image */
-  border-radius: 20px;
-  /* Circular image */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
   object-fit: cover;
-  /* Ensure the image fits perfectly */
-  margin-right: 15px;
-  /* Space between image and content */
+  margin-bottom: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
-.cards-2 .testimonial-content {
-  display: flex;
-  flex-direction: column;
-  /* Stack quote and title vertically */
-  flex: 1;
-  /* Ensure content fills the available space */
-  padding: 30px 0px 30px 30px;
-  margin-left: 30px;
-  border-left: 1.5px solid #fff;
-}
-
-.cards-2 .testimonial-stars {
+.cards-2 .testimonial-name {
   font-size: 18px;
-  /* Adjust size of the stars */
-  color: #fff;
-  /* Gold   color for the stars */
-  margin-bottom: 10px;
-  /* Spacing between stars and quote */
-  line-height: 1;
-  /* Keep stars close together */
-  text-align: left;
-  /* Align stars to the left */
-}
-
-.cards-2 .testimonial-quote {
-  font-size: 16px;
-  font-weight: 300;
-  /* Slightly bold for emphasis */
-  margin-bottom: 15px;
-  /* Space between quote and title */
-}
-
-.cards-2 .testimonial-title {
-  font-size: 14px;
-  color: #fff;
-  /* Lighter color for subtitle */
-  margin: 0;
+  font-weight: 600;
+  margin: 0 0 4px 0;
   font-family: "montserrat", sans-serif;
 }
 
-@media(max-width: 1150px) {
+.cards-2 .testimonial-role {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 12px 0;
+  font-family: "montserrat", sans-serif;
+}
+
+.cards-2 .testimonial-stars {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.cards-2 .testimonial-quote {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 1150px) {
   .cards-2 .testimonial-item {
-    position: relative;
-    width: 50%;
-    padding: 20px 5px 20px 20px;
+    width: 48%;
+    padding: 24px;
     margin-right: 10px;
+    margin-bottom: 16px;
     flex: 0 0 auto;
-    /* Ensure the cards don’t shrink */
-  }
-
-  .cards-2 .testimonial-item:last-child {
-    margin-right: 100px;
-  }
-
-  .cards-2 .testimonial-content {
-    padding: 10px 0px 10px 15px;
-    margin-left: 15px;
   }
 
   .cards-2 .testimonial-item img {
-    width: 100px;
-    height: 100px;
-    padding-right: 0;
-    margin-right: 0;
+    width: 80px;
+    height: 80px;
   }
 
-  .cards-2 .testimonial-stars {
-    margin-bottom: 5px;
+  .cards-2 .testimonial-name {
+    font-size: 16px;
   }
 
   .cards-2 .testimonial-quote {
     font-size: 14px;
-    line-height: 1.2;
-    margin-bottom: 10px;
-  }
-
-  .cards-2 .testimonial-title {
-    font-size: 12px;
-    line-height: 1.2;
   }
 }
 
 @media (max-width: 800px) {
   .cards-2 .container-2 {
-    padding: 20px 15px 20px 15px;
-    display: flex;
-    flex-direction: column;
-    margin-right: 15px;
+    padding: 20px 15px;
   }
 
   .cards-2 .cards-title h3 {
-    width: 120%;
     font-size: 30px;
+  }
+
+  .cards-2 .testimonials {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cards-2 .testimonial-item {
+    width: 85%;
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+
+  .cards-2 .testimonial-item:last-child {
+    margin-right: 0;
   }
 }
 
 @media (max-width: 767px) {
-  .cards-2 .container-2 {
-    padding: 20px 15px 20px 15px;
-    display: flex;
-    flex-direction: column;
-    margin-right: 15px;
-  }
-
   .cards-2 .testimonial-item {
-    position: relative;
     width: 90%;
-    padding: 20px 5px 20px 20px;
-    margin-right: 10px;
-    flex: 0 0 auto;
-    /* Ensure the cards don’t shrink */
-  }
-
-  .cards-2 .testimonial-item:last-child {
-    margin-right: 100px;
-  }
-
-  .cards-2 .testimonial-content {
-    padding: 10px 0px 10px 15px;
-    margin-left: 15px;
+    padding: 24px 20px;
   }
 
   .cards-2 .testimonial-item img {
-    width: 100px;
-    height: 100px;
-    padding-right: 0;
-    margin-right: 0;
+    width: 70px;
+    height: 70px;
+  }
+
+  .cards-2 .testimonial-name {
+    font-size: 16px;
+  }
+
+  .cards-2 .testimonial-role {
+    font-size: 13px;
   }
 
   .cards-2 .testimonial-quote {
     font-size: 14px;
-  }
-
-  .cards-2 .testimonial-title {
-    font-size: 12px;
   }
 
   .cards-2 .cards-title h3 {
@@ -4110,5 +4060,284 @@ section,
 
   #hero-contact blockquote {
     margin: 16px 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Blog Styles
+--------------------------------------------------------------*/
+
+/* Blog Meta Bar */
+.blog-meta {
+  padding: 0;
+  margin-left: 100px;
+}
+
+.blog-meta .container {
+  padding: 30px 0 10px;
+}
+
+.blog-meta-bar {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  font-family: "montserrat", sans-serif;
+  font-size: 14px;
+  color: #666;
+}
+
+.blog-meta-bar span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.blog-meta-bar i {
+  color: #ff5733;
+  font-size: 14px;
+}
+
+/* Blog Article Content */
+.blog-content {
+  padding-top: 0;
+  margin-left: 100px;
+}
+
+.blog-content article h2 {
+  font-family: "bree serif", sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  color: var(--default-color);
+}
+
+.blog-content article h3 {
+  font-family: "montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 12px;
+  color: var(--default-color);
+}
+
+.blog-content article p {
+  font-family: "montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.blog-content article ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.blog-content article ul li {
+  font-family: "montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+  color: #333;
+}
+
+.blog-content article ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 6px;
+  height: 6px;
+  background-color: #ff5733;
+  border-radius: 50%;
+}
+
+.blog-content article strong {
+  font-weight: 600;
+  color: var(--default-color);
+}
+
+/* Blog CTA */
+.blog-cta {
+  padding: 60px 0;
+  background-color: var(--accent-color);
+}
+
+.blog-cta h3 {
+  font-family: "bree serif", sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.blog-cta p {
+  font-family: "montserrat", sans-serif;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto 24px;
+}
+
+/* Blog Card Extensions */
+.blog-excerpt {
+  font-family: "montserrat", sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 8px;
+  margin-bottom: 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.blog-date {
+  font-family: "montserrat", sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+  order: -1;
+  margin-bottom: 8px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Blog card body: flex layout for date/title/excerpt ordering */
+#cards-blog .card .card-body,
+#blog-preview .card .card-body,
+#related-posts .card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Override absolute positioning on blog index h3 */
+#cards-blog .card .card-body h3 {
+  position: relative;
+  bottom: auto;
+  left: auto;
+}
+
+/* Very slight darkening on blog cards */
+#cards-blog .card:before,
+#blog-preview .card:before,
+#related-posts .card:before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 30%, rgba(0, 0, 0, 0.3) 80%);
+  transition: background 0.3s ease;
+}
+
+/* Hover: slightly darker + reveal date and excerpt */
+#cards-blog .card:hover:before,
+#blog-preview .card:hover:before,
+#related-posts .card:hover:before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 20%, rgba(0, 0, 0, 0.5) 80%);
+}
+
+#cards-blog .card:hover .blog-date,
+#blog-preview .card:hover .blog-date,
+#related-posts .card:hover .blog-date {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#cards-blog .card:hover .blog-excerpt,
+#blog-preview .card:hover .blog-excerpt,
+#related-posts .card:hover .blog-excerpt {
+  opacity: 1;
+  max-height: 50px;
+}
+
+/* Blog responsive */
+@media (max-width: 768px) {
+  .blog-meta {
+    margin-left: 0;
+    padding: 0 15px;
+  }
+
+  .blog-meta-bar {
+    gap: 16px;
+    font-size: 13px;
+  }
+
+  .blog-content {
+    margin-left: 0;
+    padding: 0 15px;
+  }
+
+  .blog-content article h2 {
+    font-size: 24px;
+    margin-top: 30px;
+  }
+
+  .blog-content article p,
+  .blog-content article ul li {
+    font-size: 15px;
+  }
+
+  .blog-cta h3 {
+    font-size: 26px;
+  }
+
+  .blog-cta p {
+    font-size: 15px;
+  }
+}
+
+/* Blog Index Card Grid */
+#cards-blog .container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1140px;
+  padding: 20px 15px;
+}
+
+#cards-blog .row {
+  flex-wrap: wrap;
+  gap: 0;
+  overflow-x: visible;
+  scroll-snap-type: none;
+}
+
+#cards-blog .card {
+  width: 100%;
+  min-height: unset;
+  aspect-ratio: 1 / 1;
+}
+
+#cards-blog .card .card-body h3 {
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  #cards-blog .container {
+    margin: 0;
+    padding: 20px 15px;
+  }
+
+  #cards-blog .card {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (min-width: 1800px) {
+  #cards-blog .container {
+    display: block;
+    max-width: 1400px;
+  }
+
+  #cards-blog .row .col-lg-4 {
+    width: 33.333333%;
+    margin-right: 0;
+    margin-bottom: 30px;
   }
 }
