@@ -1652,6 +1652,17 @@ section,
   /* For Chrome, Safari, and Edge */
 }
 
+/* Narrower cards (75% of col-lg-3) */
+.cards .row .col-lg-3 {
+  flex: 0 0 auto;
+  width: 19%;
+}
+
+#blog-preview .row .col-lg-3 {
+  flex: 0 0 auto;
+  width: 19%;
+}
+
 .cards .scroll-arrows {
   position: relative;
   display: flex;
