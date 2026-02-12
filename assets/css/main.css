@@ -1637,7 +1637,8 @@ section,
   scrollbar-width: none;
   /* For Firefox */
   width: 100vw;
-  padding-right: 150px;
+  padding-right: 100px;
+  /* Match left margin for symmetric scroll end */
   padding-top: 15px;
   /* Space for card lift effect (Phase 6) */
   padding-bottom: 15px;
@@ -1816,6 +1817,8 @@ section,
   .cards .row {
     gap: 10px;
     width: 100vw !important;
+    padding-right: 15px;
+    /* Match left padding for symmetric scroll end */
   }
 }
 
