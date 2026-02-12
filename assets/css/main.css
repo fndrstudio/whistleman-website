@@ -1810,12 +1810,22 @@ section,
   }
 
   .cards .row .col-lg-4 {
-    width: 80%;
+    width: 85%;
   }
 
   .cards .row {
     gap: 10px;
     width: 100vw !important;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  #blog-preview .card .card-body h3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 
