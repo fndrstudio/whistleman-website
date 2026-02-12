@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Blog - Insights for Hospitality Brands | Whistleman Media</title>
+  <meta name="description" content="Practical insights, guides, and case studies on social media management, content creation, and digital marketing for Amsterdam hospitality brands.">
+  <meta name="keywords" content="social media blog hospitality, restaurant marketing insights, hospitality content strategy, Amsterdam social media tips, restaurant digital marketing">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://whistlemanmedia.nl/blog">
+  <meta property="og:title" content="Blog - Whistleman Media">
+  <meta property="og:description" content="Practical insights, guides, and case studies on social media management, content creation, and digital marketing for Amsterdam hospitality brands.">
+  <meta property="og:image" content="https://whistlemanmedia.nl/assets/img/og-home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Whistleman Media">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog - Whistleman Media">
+  <meta name="twitter:description" content="Practical insights, guides, and case studies on social media management, content creation, and digital marketing for Amsterdam hospitality brands.">
+  <meta name="twitter:image" content="https://whistlemanmedia.nl/assets/img/og-home.jpg">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://whistlemanmedia.nl/blog">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo-whiteonblack.png" rel="icon">
+  <link href="assets/img/logo-whiteonblack.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Whistleman Media Blog",
+    "description": "Practical insights, guides, and case studies on social media management, content creation, and digital marketing for Amsterdam hospitality brands.",
+    "url": "https://whistlemanmedia.nl/blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Whistleman Media",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://whistlemanmedia.nl/assets/img/logo-whiteonblack.png"
+      }
+    }
+  }
+  </script>
+
+  <!-- Lenis Smooth Scroll -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.17/dist/lenis.css">
+  <script src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>
+
+  <!-- GSAP Animation -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+
+</head>
+
+<body class="index-page">
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="desktop-header">
+    <div class="desktop-navigation">
+      <a href="index.html" class="logo">
+        whistleman media
+      </a>
+      <nav class="desktop-nav">
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="#">Blog</a>
+        <a href="contact.html" class="contact-btn-header">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <header class="desktop-header-2">
+    <div class="desktop-navigation">
+      <a href="index.html" class="logo">
+        whistleman media
+      </a>
+      <nav class="desktop-nav">
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="#">Blog</a>
+        <a href="contact.html" class="contact-btn-header">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <a href="index.html" class="mobile-logo">
+    whistleman media
+  </a>
+  <nav class="mobile-nav" data-current-page="blog">
+    <a href="index.html" class="bloc-icon" data-nav="home">
+      <i class="bi bi-house-fill"></i>
+      <span>Home</span>
+    </a>
+    <a href="services.html" class="bloc-icon" data-nav="services">
+      <i class="bi bi-briefcase-fill"></i>
+      <span>Services</span>
+    </a>
+    <a href="portfolio.html" class="bloc-icon" data-nav="portfolio">
+      <i class="bi bi-collection-fill"></i>
+      <span>Portfolio</span>
+    </a>
+    <a href="blog.html" class="bloc-icon" data-nav="blog">
+      <i class="bi bi-journal-text"></i>
+      <span>Blog</span>
+    </a>
+    <a href="contact.html" class="mobile-nav-cta" data-nav="contact">
+      <i class="bi bi-envelope-fill"></i>
+      <span>Contact</span>
+    </a>
+  </nav>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <img src="assets/img/hero-bg-wmm.webp" alt="Whistleman Media blog - insights for hospitality brands" style="filter: brightness(60%);">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-5">
+            <h1>Insights & <span style="font-family: 'bree serif', sans-serif; font-weight: 500;">Ideas</span></h1>
+            <blockquote>
+              <p>Practical guides, case studies, and strategies to help hospitality brands win on social media.</p>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Listing -->
+    <section id="cards-blog" class="cards-portfolio section">
+
+      <div class="container">
+
+        <div class="col-lg-12 d-flex align-items-center">
+          <div class="cards-title col-lg-4 mb-5 align-items-center">
+            <h3>Latest from the Blog</h3>
+          </div>
+        </div>
+
+        <div class="row mb-5 gy-4">
+
+          <div class="col-lg-4 col-md-6">
+            <a href="blog/social-media-management-cost-amsterdam.html">
+            <div class="card">
+              <div class="image-wrapper">
+                <div class="arrow-diagonal" style="position: absolute; z-index: 2; top: -15px; right: -15px; padding: 12px; border-radius:50%; background-color: #ff5733; border: 3px solid white">
+                  <svg baseProfile="full" height="20" version="1.1" width="20" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="200 190 400 400"><defs></defs><polygon fill="white" points="276,209 267,225 267,241 272,252 280,260 291,265 485,267 208,544 200,562 202,578 206,585 217,595 229,599 242,598 254,592 532,314 534,508 539,519 547,527 558,532 574,532 589,524 599,506 599,226 593,213 583,204 573,200 293,200"></polygon></svg>
+                </div>
+                <div class="usp-faq"><span>Pricing</span></div>
+                <img src="assets/img/hero-bg-wmm.webp" alt="Social media management cost guide for Amsterdam businesses" class="img-fluid" loading="lazy">
+                <div class="card-body">
+                  <h3>How Much Does Social Media Management Actually Cost in Amsterdam?</h3>
+                  <p class="blog-excerpt">We break down agency pricing, freelancer rates, and DIY costs for hospitality brands.</p>
+                  <span class="blog-date">February 10, 2026</span>
+                </div>
+              </div>
+            </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <a href="blog/google-business-profile-guide-amsterdam-restaurants.html">
+            <div class="card">
+              <div class="image-wrapper">
+                <div class="arrow-diagonal" style="position: absolute; z-index: 2; top: -15px; right: -15px; padding: 12px; border-radius:50%; background-color: #ff5733; border: 3px solid white">
+                  <svg baseProfile="full" height="20" version="1.1" width="20" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="200 190 400 400"><defs></defs><polygon fill="white" points="276,209 267,225 267,241 272,252 280,260 291,265 485,267 208,544 200,562 202,578 206,585 217,595 229,599 242,598 254,592 532,314 534,508 539,519 547,527 558,532 574,532 589,524 599,506 599,226 593,213 583,204 573,200 293,200"></polygon></svg>
+                </div>
+                <div class="usp-faq"><span>Guide</span></div>
+                <img src="assets/img/Services.webp" alt="Google Business Profile guide for Amsterdam restaurants" class="img-fluid" loading="lazy">
+                <div class="card-body">
+                  <h3>The Complete Google Business Profile Guide</h3>
+                  <p class="blog-excerpt">Your Google Business Profile is the first thing hungry guests see. Here's how to optimise it.</p>
+                  <span class="blog-date">February 10, 2026</span>
+                </div>
+              </div>
+            </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <a href="blog/whats-working-amsterdam-restaurant-social-media-2026.html">
+            <div class="card">
+              <div class="image-wrapper">
+                <div class="arrow-diagonal" style="position: absolute; z-index: 2; top: -15px; right: -15px; padding: 12px; border-radius:50%; background-color: #ff5733; border: 3px solid white">
+                  <svg baseProfile="full" height="20" version="1.1" width="20" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="200 190 400 400"><defs></defs><polygon fill="white" points="276,209 267,225 267,241 272,252 280,260 291,265 485,267 208,544 200,562 202,578 206,585 217,595 229,599 242,598 254,592 532,314 534,508 539,519 547,527 558,532 574,532 589,524 599,506 599,226 593,213 583,204 573,200 293,200"></polygon></svg>
+                </div>
+                <div class="usp-faq"><span>Trends</span></div>
+                <img src="assets/img/oeuf-case.webp" alt="Amsterdam restaurant social media trends 2026" class="img-fluid" loading="lazy">
+                <div class="card-body">
+                  <h3>What's Actually Working on Amsterdam Restaurant Social Media in 2026</h3>
+                  <p class="blog-excerpt">From short-form video to UGC, here's what hospitality brands need to know right now.</p>
+                  <span class="blog-date">February 10, 2026</span>
+                </div>
+              </div>
+            </div>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6">
+            <a href="blog/oeuf-amsterdam-case-study-4k-to-10k-followers.html">
+            <div class="card">
+              <div class="image-wrapper">
+                <div class="arrow-diagonal" style="position: absolute; z-index: 2; top: -15px; right: -15px; padding: 12px; border-radius:50%; background-color: #ff5733; border: 3px solid white">
+                  <svg baseProfile="full" height="20" version="1.1" width="20" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="200 190 400 400"><defs></defs><polygon fill="white" points="276,209 267,225 267,241 272,252 280,260 291,265 485,267 208,544 200,562 202,578 206,585 217,595 229,599 242,598 254,592 532,314 534,508 539,519 547,527 558,532 574,532 589,524 599,506 599,226 593,213 583,204 573,200 293,200"></polygon></svg>
+                </div>
+                <div class="usp-faq"><span>Case Study</span></div>
+                <img src="assets/img/cases/oeuf hero foto.webp" alt="Oeuf Amsterdam Instagram growth case study" class="img-fluid" loading="lazy">
+                <div class="card-body">
+                  <h3>How We Grew Oeuf Amsterdam from 4K to 10K Followers</h3>
+                  <p class="blog-excerpt">The full strategy, timeline, and lessons learned from doubling a restaurant's Instagram.</p>
+                  <span class="blog-date">February 10, 2026</span>
+                </div>
+              </div>
+            </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <a href="blog/diy-social-media-checklist-hospitality-owners.html">
+            <div class="card">
+              <div class="image-wrapper">
+                <div class="arrow-diagonal" style="position: absolute; z-index: 2; top: -15px; right: -15px; padding: 12px; border-radius:50%; background-color: #ff5733; border: 3px solid white">
+                  <svg baseProfile="full" height="20" version="1.1" width="20" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="200 190 400 400"><defs></defs><polygon fill="white" points="276,209 267,225 267,241 272,252 280,260 291,265 485,267 208,544 200,562 202,578 206,585 217,595 229,599 242,598 254,592 532,314 534,508 539,519 547,527 558,532 574,532 589,524 599,506 599,226 593,213 583,204 573,200 293,200"></polygon></svg>
+                </div>
+                <div class="usp-faq"><span>Checklist</span></div>
+                <img src="assets/img/burgernshake.webp" alt="DIY social media checklist for hospitality owners" class="img-fluid" loading="lazy">
+                <div class="card-body">
+                  <h3>The DIY Social Media Checklist for Hospitality Owners</h3>
+                  <p class="blog-excerpt">Not ready to hire an agency? Here's a practical checklist to handle it yourself.</p>
+                  <span class="blog-date">February 10, 2026</span>
+                </div>
+              </div>
+            </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer position-relative">
+
+    <div class="container footer-top d-flex">
+      <div class="col-lg-6 footer-left d-flex flex-column">
+        <h2 class="logo-text-footer">whistleman media</h2>
+        <img src="assets/img/logo-whiteonblack.webp" alt="Whistleman Media logo" class="logo-footer" loading="lazy">
+        <div class="social-media-footer">
+          <p>Our Socials</p>
+          <div class="social-links d-flex">
+            <a href="https://www.tiktok.com/@whistlemanmedia"><i class="bi bi-tiktok"></i></a>
+            <a href="https://www.instagram.com/whistlemanmedia/"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/whistlemanmedia/?originalSubdomain=nl"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="services-and-contact d-flex">
+          <div class="services-footer d-flex flex-column">
+            <h3>Services</h3>
+            <a href="services.html">01 Social Media Management</a>
+            <a href="services.html">02 Content Creation</a>
+            <a href="services.html">03 Web Design & Development</a>
+          </div>
+          <div class="contact-footer d-flex flex-column">
+            <h3>Contact</h3>
+            <p>Email: <a href="mailto:contact@whistlemanmedia.nl">contact@whistlemanmedia.nl</a></p>
+            <p>Tel: <a href="tel:+31641867873">+31641867873</a></p>
+            <p>Address: <a href="https://maps.app.goo.gl/5YbxFvi9inJyLHyA9">Jacob Bontiusplaats 9 AI.AM - The Hubb, 1018LL Amsterdam</a></p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.919763984961!2d4.925946277387852!3d52.37187487202289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609094a8d4487%3A0x5d7577ed615e932f!2sJacob%20Bontiusplaats%209%2C%201018%20LL%20Amsterdam!5e0!3m2!1snl!2snl!4v1764246110365!5m2!1snl!2snl" width="350" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 footer-right d-flex flex-column">
+        <div class="community-newsletter">
+          <h3>Become a Part of Whistleman <br> Media's Community</h3>
+          <form id="newsletter" class="d-flex flex-column">
+            <input type="email" id="to_email" placeholder="Email:" name="to_email" required="">
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+        <div id="subscription-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; padding: 20px; border: 2px solid #000; z-index: 1000; border-radius: 8px;">
+          <p style="font-family: 'montserrat', sans-serif;">Thank you for your subscription! You've got mail!</p>
+          <button id="close-popup" style="margin-top: 10px; background-color: #000; color: var(--background-color); padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;">Close</button>
+        </div>
+
+        <div class="cta-footer d-flex">
+          <div class="cta-content d-flex">
+            <h3>Ready to Create <br>Together?</h3>
+            <a href="contact.html" class="btn-footer">Reach Out Now!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+      (function() {
+          emailjs.init({
+            publicKey: "xSt4A1yusGFKnSwVo",
+          });
+      })();
+  </script>
+  <script type="text/javascript">
+      window.onload = function() {
+          document.getElementById('newsletter').addEventListener('submit', function(event) {
+              event.preventDefault();
+
+              emailjs.sendForm('service_g99gf2a', 'template_fno3r68', this)
+                  .then(() => {
+                      const popup = document.getElementById('subscription-popup');
+                      popup.style.display = 'block';
+                      setTimeout(() => {
+                          popup.style.display = 'none';
+                      }, 5000);
+                  }, (error) => {
+                      console.log('FAILED...', error);
+                  });
+          });
+
+          document.getElementById('close-popup').addEventListener('click', () => {
+              document.getElementById('subscription-popup').style.display = 'none';
+          });
+      }
+  </script>
+
+</body>
+
+</html>
