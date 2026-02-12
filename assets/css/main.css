@@ -4257,6 +4257,25 @@ section,
   max-height: 50px;
 }
 
+/* Blog preview cards on mobile */
+@media (max-width: 768px) {
+  #blog-preview .row .col-lg-4 {
+    width: 90%;
+  }
+
+  #blog-preview .blog-excerpt {
+    display: none;
+  }
+
+  #blog-preview .card .card-body h3 {
+    font-size: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
 /* Blog responsive */
 @media (max-width: 768px) {
   .blog-meta {
