@@ -1637,8 +1637,7 @@ section,
   scrollbar-width: none;
   /* For Firefox */
   width: 100vw;
-  padding-right: 100px;
-  /* Match left margin for symmetric scroll end */
+  padding-right: 150px;
   padding-top: 15px;
   /* Space for card lift effect (Phase 6) */
   padding-bottom: 15px;
@@ -1650,17 +1649,6 @@ section,
 .cards .row::-webkit-scrollbar {
   display: none;
   /* For Chrome, Safari, and Edge */
-}
-
-/* Narrower cards (75% of col-lg-3) */
-.cards .row .col-lg-3 {
-  flex: 0 0 auto;
-  width: 19%;
-}
-
-#blog-preview .row .col-lg-3 {
-  flex: 0 0 auto;
-  width: 19%;
 }
 
 .cards .scroll-arrows {
@@ -1821,16 +1809,23 @@ section,
     display: none;
   }
 
-  .cards .row .col-lg-4,
-  .cards .row .col-lg-3 {
-    width: 80%;
+  .cards .row .col-lg-4 {
+    width: 85%;
   }
 
   .cards .row {
     gap: 10px;
     width: 100vw !important;
     padding-right: 15px;
-    /* Match left padding for symmetric scroll end */
+  }
+}
+
+@media (max-width: 768px) {
+  #blog-preview .card .card-body h3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 
@@ -4270,51 +4265,6 @@ section,
 #related-posts .card:hover .blog-excerpt {
   opacity: 1;
   max-height: 50px;
-}
-
-/* Blog preview cards on mobile */
-@media (max-width: 768px) {
-  #blog-preview .row .col-lg-3 {
-    width: 100%;
-  }
-
-  #blog-preview .blog-excerpt {
-    display: none;
-  }
-
-  #blog-preview .blog-date {
-    display: none;
-  }
-
-  #blog-preview .card .card-body h3 {
-    font-size: 16px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  /* Portfolio cards on mobile */
-  .cards .row .col-lg-3 {
-    width: 100%;
-  }
-
-  /* Disable hover effects on all cards on mobile */
-  .cards .card:hover,
-  .cards-portfolio .card:hover {
-    transform: none !important;
-    box-shadow: none !important;
-  }
-
-  .cards .card:hover:before,
-  .cards-portfolio .card:hover:before {
-    opacity: 1;
-  }
-
-  .cards .card:hover .card-body,
-  .cards-portfolio .card:hover .card-body {
-    transform: none !important;
-  }
 }
 
 /* Blog responsive */
