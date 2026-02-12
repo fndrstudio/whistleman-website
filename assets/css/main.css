@@ -4260,7 +4260,7 @@ section,
 /* Blog preview cards on mobile */
 @media (max-width: 768px) {
   #blog-preview .row .col-lg-4 {
-    width: 95%;
+    width: 100%;
   }
 
   #blog-preview .blog-excerpt {
@@ -4279,17 +4279,20 @@ section,
     overflow: hidden;
   }
 
-  /* Disable hover effects on mobile */
-  #blog-preview .card:hover {
+  /* Disable hover effects on all cards on mobile */
+  .cards .card:hover,
+  .cards-portfolio .card:hover {
     transform: none !important;
     box-shadow: none !important;
   }
 
-  #blog-preview .card:hover:before {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 30%, rgba(0, 0, 0, 0.3) 80%);
+  .cards .card:hover:before,
+  .cards-portfolio .card:hover:before {
+    opacity: 1;
   }
 
-  #blog-preview .card:hover .card-body {
+  .cards .card:hover .card-body,
+  .cards-portfolio .card:hover .card-body {
     transform: none !important;
   }
 }
