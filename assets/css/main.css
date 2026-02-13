@@ -1611,6 +1611,10 @@ section,
   .cards .container {
     display: none;
   }
+
+  #blog-preview .container {
+    display: block;
+  }
 }
 
 .cards .container {
