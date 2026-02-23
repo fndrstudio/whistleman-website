@@ -17,7 +17,7 @@
   /* Background color for the entire website, including individual sections */
   --default-color: #212529;
   /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #2d465e;
+  --heading-color: #212529;
   /* Color for headings, subheadings and title throughout the website */
   --accent-color: #ff5733;
   /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
@@ -1614,6 +1614,9 @@ section,
 
   #blog-preview .container {
     display: block;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
@@ -1621,6 +1624,18 @@ section,
   padding: 20px 0px;
   margin-right: 0px;
   margin-left: 100px;
+}
+
+#blog-preview .container {
+  margin: 0 auto;
+  padding: 20px 15px;
+  max-width: 1200px;
+}
+
+#blog-preview .row {
+  overflow: visible;
+  padding-right: 0;
+  justify-content: center;
 }
 
 .cards .container-fluid {
