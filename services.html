@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q33X4CQ5KZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-Q33X4CQ5KZ');
+  </script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Creative Digital Solutions - Whistleman Media Services</title>
@@ -45,13 +54,40 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": ["Social Media Management", "Content Creation", "Web Design"],
+    "provider": {
+      "@type": "Organization",
+      "name": "Whistleman Media",
+      "url": "https://whistlemanmedia.nl"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Amsterdam"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Social Media Packages",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Social Easy", "description": "1 shoot per month, 1 photo & 1 video per week, posting on 2 channels"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Social Boost", "description": "1 shoot per month, 2 photos & 1 video per week, posting on 3 channels"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Social Advanced", "description": "1 shoot per month, 2-3 photos & 1-2 videos per week, posting on 5 channels"}}
+      ]
+    }
+  }
+  </script>
+
   <!-- Lenis Smooth Scroll -->
   <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.17/dist/lenis.css">
-  <script src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js" defer></script>
 
   <!-- GSAP Animation -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js" defer></script>
 
 </head>
 
@@ -126,7 +162,7 @@
               <div>and grow <span style="font-family: 'bree serif', sans-serif">online</span></div>
             </h1>
             <blockquote>
-              <p>  At Whistlemen Media, we provide everything you need to build and grow your online presence. 
+              <p>  At Whistleman Media, we provide everything you need to build and grow your online presence. 
                 See what we can do to help your brand stand out and make an impact.</p>
             </blockquote>
             <div class="d-flex">
@@ -270,7 +306,7 @@
         <div class="row gy-4">
       
           <div class="content mb-5">
-            <h3 style="font-family: 'bree serif', sans-serif; font-weight: 500;">Our toolkit includes</h3>
+            <h2 style="font-family: 'bree serif', sans-serif; font-weight: 500;">Our toolkit includes</h2>
           </div>
 
           <div class="col-lg-4 col-md-6">
@@ -287,7 +323,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="card">
-              <img src="assets/img/services/content-creation-service-photo.webp" alt="Professional video production and creative content creation in studio setting" class="img-fluid" loading="lazy">
+              <img src="assets/img/services/content-creation-service-photo.webp" alt="Professional video production and creative content creation in studio setting" class="img-fluid" loading="lazy" style="transform: rotate(90deg);">
               <div class="card-body">
                 <h3>02 Content Creation</h3>
                 <div class="card-content">
@@ -325,7 +361,7 @@
 
         <div class="col-lg-12 d-flex align-items-center">
           <div class="cards-title col-lg-4 mb-5 align-items-center">
-            <h3 style="font-family: 'bree serif', sans-serif; font-weight: 500;">See How We Bring Ideas to Life</h3>
+            <h2 style="font-family: 'bree serif', sans-serif; font-weight: 500;">See How We Bring Ideas to Life</h2>
           </div>
           <div class="scroll-arrows col-lg-8 mb-5 d-flex align-items-center justify-content-end">
             <button class="scroll-left"><!--?xml version="1.0" encoding="iso-8859-1"?--><svg height="15px" width="15px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 34.075 34.075" xml:space="preserve">
@@ -362,7 +398,7 @@
                 <div class="usp-faq">
                   <span>SMMA</span>
                 </div>
-                <img src="assets/img/oeuf-case.webp" alt="" class="img-fluid" loading="lazy">
+                <img src="assets/img/oeuf-case.webp" alt="Oeuf social media campaign by Whistleman Media" class="img-fluid" loading="lazy">
                 <div class="card-body">
                   <h3>Oeuf</h3>
                 </div>
@@ -385,7 +421,7 @@
                   <span>SMMA</span>
                   <span>Graphic Design</span>
                 </div>
-                <img src="assets/img/burgernshake.webp" alt="" class="img-fluid" loading="lazy">
+                <img src="assets/img/burgernshake.webp" alt="Burger n Shake social media campaign by Whistleman Media" class="img-fluid" loading="lazy">
                 <div class="card-body">
                   <h3>Burger 'n Shake</h3>
                 </div>
@@ -396,7 +432,7 @@
           </div><!-- End Card Item -->
 
           <div class="col-lg-4 col-md-6">
-            <a href="portfolio/inner circle.html">
+            <a href="portfolio/inner-circle.html">
             <div class="card">
               <div class="image-wrapper">
                 <div class="arrow-diagonal" style="position: absolute; z-index: 2; top: -15px; right: -15px; padding: 12px; border-radius:50%; background-color: #ff5733; border: 3px solid white">
@@ -409,7 +445,7 @@
                   <span>Content Creation</span>
                   <span>Event</span>
                 </div>
-                <img src="assets/img/inner circle - case.webp" alt="" class="img-fluid" loading="lazy">
+                <img src="assets/img/inner circle - case.webp" alt="Inner Circle content creation campaign by Whistleman Media" class="img-fluid" loading="lazy">
                 <div class="card-body">
                   <h3>Inner Circle</h3>
                 </div>
@@ -433,7 +469,7 @@
                   <span>SMMA</span>
                   <!-- <span>usp</span> -->
                 </div>
-                <img src="assets/img/Pazzi-case.webp" alt="" class="img-fluid">
+                <img src="assets/img/Pazzi-case.webp" alt="Pazzi social media campaign by Whistleman Media" class="img-fluid">
                 <div class="card-body">
                   <h3>Pazzi</h3>
                 </div>
@@ -457,7 +493,7 @@
                   <span>SMMA</span>
                   <!-- <span>usp</span> -->
                 </div>
-                <img src="assets/img/Linguini-case.webp" alt="" class="img-fluid">
+                <img src="assets/img/Linguini-case.webp" alt="Linguini social media campaign by Whistleman Media" class="img-fluid">
                 <div class="card-body">
                   <h3>Linguini</h3>
                 </div>
@@ -474,7 +510,7 @@
 
         <div class="col-lg-12 d-flex align-items-center">
           <div class="cards-title col-lg-4 mb-5 align-items-center">
-            <h3 style="font-family: 'bree serif', sans-serif; font-weight: 500;">See How We Bring Ideas to Life</h3>
+            <h2 style="font-family: 'bree serif', sans-serif; font-weight: 500;">See How We Bring Ideas to Life</h2>
           </div>
           <div class="scroll-arrows col-lg-8 mb-5 d-flex align-items-center justify-content-end">
             <button class="scroll-left"><!--?xml version="1.0" encoding="iso-8859-1"?--><svg height="15px" width="15px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 34.075 34.075" xml:space="preserve">
@@ -511,7 +547,7 @@
                 <div class="usp-faq">
                   <span>SMMA</span>
                 </div>
-                <img src="assets/img/oeuf-case.webp" alt="" class="img-fluid" loading="lazy">
+                <img src="assets/img/oeuf-case.webp" alt="Oeuf social media campaign by Whistleman Media" class="img-fluid" loading="lazy">
                 <div class="card-body">
                   <h3>Oeuf</h3>
                 </div>
@@ -534,7 +570,7 @@
                   <span>SMMA</span>
                   <span>Graphic Design</span>
                 </div>
-                <img src="assets/img/burgernshake.webp" alt="" class="img-fluid" loading="lazy">
+                <img src="assets/img/burgernshake.webp" alt="Burger n Shake social media campaign by Whistleman Media" class="img-fluid" loading="lazy">
                 <div class="card-body">
                   <h3>Burger 'n shakes</h3>
                 </div>
@@ -545,7 +581,7 @@
           </div><!-- End Card Item -->
 
           <div class="col-lg-4 col-md-6">
-            <a href="portfolio/inner circle.html">
+            <a href="portfolio/inner-circle.html">
             <div class="card">
               <div class="image-wrapper">
                 <div class="arrow-diagonal" style="position: absolute; z-index: 2; top: -15px; right: -15px; padding: 12px; border-radius:50%; background-color: #ff5733; border: 3px solid white">
@@ -558,7 +594,7 @@
                   <span>Content Creation</span>
                   <span>Event</span>
                 </div>
-                <img src="assets/img/inner circle - case.webp" alt="" class="img-fluid" loading="lazy">
+                <img src="assets/img/inner circle - case.webp" alt="Inner Circle content creation campaign by Whistleman Media" class="img-fluid" loading="lazy">
                 <div class="card-body">
                   <h3>Inner Circle</h3>
                 </div>
@@ -582,7 +618,7 @@
                   <span>SMMA</span>
                   <!-- <span>usp</span> -->
                 </div>
-                <img src="assets/img/Pazzi-case.webp" alt="" class="img-fluid">
+                <img src="assets/img/Pazzi-case.webp" alt="Pazzi social media campaign by Whistleman Media" class="img-fluid">
                 <div class="card-body">
                   <h3>Pazzi</h3>
                 </div>
@@ -606,7 +642,7 @@
                   <span>SMMA</span>
                   <!-- <span>usp</span> -->
                 </div>
-                <img src="assets/img/Linguini-case.webp" alt="" class="img-fluid">
+                <img src="assets/img/Linguini-case.webp" alt="Linguini social media campaign by Whistleman Media" class="img-fluid">
                 <div class="card-body">
                   <h3>Linguini</h3>
                 </div>
@@ -629,7 +665,7 @@
     <div class="container footer-top d-flex">
       <div class="col-lg-6 footer-left d-flex flex-column">
         <h2 class="logo-text-footer">whistleman media</h2>
-        <img src="assets/img/logo-whiteonblack.webp" alt="" class="logo-footer" loading="lazy">
+        <img src="assets/img/logo-whiteonblack.webp" alt="Whistleman Media logo" class="logo-footer" loading="lazy">
         <div class="social-media-footer">
           <p>Our Socials</p>
           <div class="social-links d-flex">

@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q33X4CQ5KZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-Q33X4CQ5KZ');
+  </script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Get in Touch - Whistleman Media Contact</title>
@@ -45,13 +54,37 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Whistleman Media",
+    "description": "Get in touch with Whistleman Media for social media management, content creation, and web design services in Amsterdam.",
+    "url": "https://whistlemanmedia.nl/contact",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Whistleman Media",
+      "telephone": "+31641867873",
+      "email": "contact@whistlemanmedia.nl",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jacob Bontiusplaats 9 AI.AM - The Hubb",
+        "addressLocality": "Amsterdam",
+        "postalCode": "1018LL",
+        "addressCountry": "NL"
+      }
+    }
+  }
+  </script>
+
   <!-- Lenis Smooth Scroll -->
   <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.17/dist/lenis.css">
-  <script src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js" defer></script>
 
   <!-- GSAP Animation -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js" defer></script>
 
 </head>
 
@@ -196,7 +229,7 @@
     <div class="container footer-top d-flex">
       <div class="col-lg-6 footer-left d-flex flex-column">
         <h2 class="logo-text-footer">whistleman media</h2>
-        <img src="assets/img/logo-whiteonblack.webp" alt="" class="logo-footer" loading="lazy">
+        <img src="assets/img/logo-whiteonblack.webp" alt="Whistleman Media logo" class="logo-footer" loading="lazy">
         <div class="social-media-footer">
           <p>Our Socials</p>
           <div class="social-links d-flex">
